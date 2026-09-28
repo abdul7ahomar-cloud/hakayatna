@@ -583,6 +583,15 @@ body.site-locked #floating-second-letter-trigger{opacity:0;pointer-events:none;t
 .music-seek input{accent-color:#ff9ecc;flex:1;min-width:0}
 .music-modes.is-tracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr))}
 .music-modes.is-tracks .music-mode{min-width:0;padding:8px 0;text-align:center}
+</style><style id="message-icons-global-pin">
+/* تثبيت أيقونات الرسائل فوق كل صفحات وأقسام الموقع */
+body:not(.site-locked) #floating-letter-trigger,
+body:not(.site-locked) #floating-second-letter-trigger{position:fixed!important;top:14px!important;z-index:99999!important;display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+body:not(.site-locked) #floating-letter-trigger{right:14px!important}
+body:not(.site-locked) #floating-second-letter-trigger{left:50%!important;right:auto!important;transform:translateX(-50%)!important}
+body:not(.site-locked) #floating-letter-trigger:hover{transform:translateY(-3px)!important}
+body:not(.site-locked) #floating-second-letter-trigger:hover{transform:translateX(-50%) translateY(-3px)!important}
+@media(max-width:600px){body:not(.site-locked) #floating-letter-trigger{top:10px!important;right:10px!important}body:not(.site-locked) #floating-second-letter-trigger{top:10px!important}}
 </style></head> <body class="site-locked"><button id="floating-letter-trigger" type="button" aria-label="افتحي رسالة أيوشة" aria-controls="floating-letter-modal" aria-expanded="false"><span class="letter-icon">✉</span><span class="letter-spark">✦</span><span class="letter-label">رسالة ليكي يا أيوشة</span></button><div id="floating-letter-modal" role="dialog" aria-modal="true" aria-labelledby="floating-letter-title" aria-hidden="true"><div class="floating-letter-card"><div class="floating-letter-top"><span class="floating-letter-seal">♥</span><div><span class="floating-letter-kicker">A LETTER FROM THE HEART</span><h2 class="floating-letter-title" id="floating-letter-title">كلام من قلبي لأيوشة</h2></div><button class="floating-letter-close" id="floating-letter-close" type="button" aria-label="إغلاق الرسالة">×</button></div><div class="floating-letter-body"><div class="floating-letter-text">أيوشة أنا مش عارف أرتب الكلام ده إزاي وممكن أكون بقول حاجات بشكل عشوائي شوية بس حبيت أتكلم معاكي عن حاجة جوايا بدل ما أفضل ساكت
 يمكن أنا قلتلك قبل كده كلام كتير ومش عايز أكرر نفس الكلام بس الفترة الأخيرة جوايا إحساس غريب شوية ومش عارف أوصفه صح
 أوقات بحس إنك مش زي الأول بس مش قصدي أقول إنك اتغيرتي أو إن في حاجة وحشة حصلت بينا يمكن إحساسي أنا اللي اتغير ويمكن أنا بقيت متعلق أكتر وبلاحظ تفاصيل أكتر من زمان
