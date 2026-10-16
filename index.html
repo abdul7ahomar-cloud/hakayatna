@@ -869,6 +869,8 @@ body.site-locked #floating-second-letter-trigger{opacity:0;pointer-events:none;t
 </style>
 
 
+
+
 <style id="romantic-lock-counter-refresh">
 #site-lock{background:radial-gradient(circle at 50% 18%,rgba(255,158,204,.24),transparent 25%),radial-gradient(circle at 15% 85%,rgba(111,143,255,.18),transparent 30%),linear-gradient(135deg,#060817 0%,#171333 48%,#090d22 100%);overflow:hidden}
 #site-lock::before,#site-lock::after{content:'';position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);opacity:.7}
@@ -1071,8 +1073,9 @@ const CLOUD_CONTACT=&#x27;ayousha&#x27;;
 function accountFromPhone(phone){let digits=String(phone||&#x27;&#x27;).replace(/\D/g,&#x27;&#x27;);return Object.entries(CHAT_ACCOUNTS).find(([number])=&gt;digits.endsWith(number))?.[1]||null}
 function activeChatAccount(){return accountFromPhone(currentSession?.phone)||CHAT_ACCOUNTS[&#x27;1234567&#x27;]}
 function ensureCloudContact(){if(!contacts.length){contacts=[{id:1,name:&#x27;أيوشة&#x27;,color:&#x27;#735cff&#x27;,online:true,pinned:false,muted:false,msgs:[]}];}return contacts[0]}
-async function syncCloudMessages(){if(!cloudClient)return;let c=ensureCloudContact(),me=activeChatAccount();const {data,error}=await cloudClient.from(&#x27;messages&#x27;).select(&#x27;id,text,status,sender,message_type,created_at&#x27;).eq(&#x27;contact&#x27;,CLOUD_CONTACT).order(&#x27;created_at&#x27;,{ascending:true}).limit(500);if(error){toast(&#x27;تعذر الاتصال بقاعدة البيانات&#x27;);renderList();return}c.msgs=(data||[]).map(m=&gt;({cloudId:m.id,from:m.sender===me.sender?&#x27;me&#x27;:&#x27;them&#x27;,text:m.text||&#x27;&#x27;,time:new Date(m.created_at).toLocaleTimeString(&#x27;ar&#x27;,{hour:&#x27;2-digit&#x27;,minute:&#x27;2-digit&#x27;,numberingSystem:&#x27;latn&#x27;}),read:m.status!==&#x27;sent&#x27;,seen:true,kind:m.message_type===&#x27;text&#x27;?&#x27;text&#x27;:(m.message_type||&#x27;text&#x27;)}));save();renderList();if(activeId===c.id)paintMessages()}
+async function syncCloudMessages(){if(!cloudClient)return;let c=ensureCloudContact(),me=activeChatAccount();const {data,error}=await cloudClient.from(&#x27;messages&#x27;).select(&#x27;id,text,status,sender,message_type,audio_url,created_at&#x27;).eq(&#x27;contact&#x27;,CLOUD_CONTACT).order(&#x27;created_at&#x27;,{ascending:true}).limit(500);if(error){toast(&#x27;تعذر الاتصال بقاعدة البيانات&#x27;);renderList();return}c.msgs=(data||[]).map(m=&gt;({cloudId:m.id,from:m.sender===me.sender?&#x27;me&#x27;:&#x27;them&#x27;,text:m.text||&#x27;&#x27;,url:m.audio_url||&#x27;&#x27;,time:new Date(m.created_at).toLocaleTimeString(&#x27;ar&#x27;,{hour:&#x27;2-digit&#x27;,minute:&#x27;2-digit&#x27;,numberingSystem:&#x27;latn&#x27;}),read:m.status!==&#x27;sent&#x27;,seen:true,duration:m.message_type===&#x27;audio&#x27;?&#x27;صوت&#x27;:undefined,kind:m.message_type===&#x27;audio&#x27;?&#x27;audio&#x27;:(m.message_type===&#x27;text&#x27;?&#x27;text&#x27;:(m.message_type||&#x27;text&#x27;))}));save();renderList();if(activeId===c.id)paintMessages()}
 async function sendCloudText(text){if(!cloudClient)return null;let me=activeChatAccount();const {data,error}=await cloudClient.from(&#x27;messages&#x27;).insert({user_id:me.userId,contact:CLOUD_CONTACT,sender:me.sender,text,status:&#x27;sent&#x27;,message_type:&#x27;text&#x27;}).select(&#x27;id,created_at&#x27;).single();if(error){toast(&#x27;تعذر إرسال الرسالة إلى قاعدة البيانات&#x27;);return null}return data}
+async function sendCloudAudio(dataUrl,duration){if(!cloudClient)return null;let me=activeChatAccount();const {data,error}=await cloudClient.from(&#x27;messages&#x27;).insert({user_id:me.userId,contact:CLOUD_CONTACT,sender:me.sender,text:&#x27;رسالة صوتية&#x27;,audio_url:dataUrl,status:&#x27;sent&#x27;,message_type:&#x27;audio&#x27;}).select(&#x27;id,created_at&#x27;).single();if(error){toast(&#x27;تعذر حفظ الرسالة الصوتية في قاعدة البيانات&#x27;);return null}return data}
 
 const CLEAN_DATA_VERSION=&#x27;chat-clean-v1&#x27;;
 if(localStorage.getItem(&#x27;chat_data_version&#x27;)!==CLEAN_DATA_VERSION){localStorage.removeItem(&#x27;wa_contacts&#x27;);Object.keys(localStorage).filter(k=&gt;k.startsWith(&#x27;wa_wallpaper_&#x27;)).forEach(k=&gt;localStorage.removeItem(k));localStorage.setItem(&#x27;chat_data_version&#x27;,CLEAN_DATA_VERSION);contacts=[];}
@@ -1125,15 +1128,17 @@ async function toggleRecording(){
     audioChunks=[];
     mediaRecorder=new MediaRecorder(stream);
     mediaRecorder.ondataavailable=function(e){audioChunks.push(e.data)};
-    mediaRecorder.onstop=function(){
+    mediaRecorder.onstop=async function(){
       stream.getTracks().forEach(function(t){t.stop()});
-      const blob=new Blob(audioChunks);
-      const url=URL.createObjectURL(blob);
-      const c=contacts.find(function(x){return x.id===activeId});
-      c.msgs.push({from:&#x27;me&#x27;,kind:&#x27;audio&#x27;,url:url,duration:formatDuration(recordSeconds),time:now(),read:false});
-      save(); paintMessages(); renderList(); clearInterval(recordTimer); recordSeconds=0;
-      document.getElementById(&#x27;micBtn&#x27;).classList.remove(&#x27;recording&#x27;);
-      toast(&#x27;تم إرسال الرسالة الصوتية&#x27;);
+      const blob=new Blob(audioChunks,{type:audioChunks[0]?.type||&#x27;audio/webm&#x27;});
+      const duration=formatDuration(recordSeconds);
+      const reader=new FileReader();
+      reader.onloadend=async function(){
+        const sent=await sendCloudAudio(reader.result,duration);
+        if(sent){await syncCloudMessages();toast(&#x27;تم إرسال الفويس للطرف الثاني&#x27;)}else{toast(&#x27;الفويس ما اتبعتش؛ قاعدة البيانات غير متاحة&#x27;)}
+        clearInterval(recordTimer);recordSeconds=0;document.getElementById(&#x27;micBtn&#x27;).classList.remove(&#x27;recording&#x27;);
+      };
+      reader.readAsDataURL(blob);
     };
     mediaRecorder.start();
     recordSeconds=0;
@@ -1146,7 +1151,7 @@ function formatDuration(s){return Math.floor(s/60)+&#x27;:&#x27;+String(s%60).pa
 function handleFiles(e){let c=contacts.find(x=&gt;x.id===activeId);[...e.target.files].forEach(f=&gt;{let url=URL.createObjectURL(f);c.msgs.push({from:&#x27;me&#x27;,kind:&#x27;file&#x27;,name:f.name,url,image:f.type.startsWith(&#x27;image/&#x27;),time:now(),read:false})});e.target.value=&#x27;&#x27;;save();paintMessages();renderList()}
 function chooseWallpaper(){document.getElementById(&#x27;wallpaperInput&#x27;).click()}
 function handleWallpaper(e){const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=function(){try{localStorage.setItem(&#x27;wa_wallpaper_&#x27;+activeId,reader.result);renderChat();toast(&#x27;تم تغيير خلفية المحادثة&#x27;)}catch(err){toast(&#x27;الصورة كبيرة جدًا، اختر صورة أصغر&#x27;)}};reader.readAsDataURL(file);e.target.value=&#x27;&#x27;}
-async function sendMsg(){let input=document.getElementById(&#x27;msgInput&#x27;),text=input?.value.trim();if(!text)return;let c=ensureCloudContact();input.value=&#x27;&#x27;;let sent=await sendCloudText(text);if(sent){await syncCloudMessages();renderList();}else{c.msgs.push({from:&#x27;me&#x27;,text,time:now(),read:false,seen:true});save();paintMessages();renderList()}}
+async function sendMsg(){let input=document.getElementById(&#x27;msgInput&#x27;),text=input?.value.trim();if(!text)return;input.value=&#x27;&#x27;;let sent=await sendCloudText(text);if(sent){await syncCloudMessages();renderList();}else{toast(&#x27;الرسالة لم تُرسل؛ قاعدة البيانات غير متاحة&#x27;)}}
 async function callUser(id,type){let c=contacts.find(x=&gt;x.id===id);callType=type;document.getElementById(&#x27;callOverlay&#x27;).style.display=&#x27;flex&#x27;;document.getElementById(&#x27;callTitle&#x27;).textContent=(type===&#x27;video&#x27;?&#x27;مكالمة فيديو مع &#x27;:&#x27;مكالمة صوتية مع &#x27;)+c.name;let av=document.getElementById(&#x27;callAvatar&#x27;);av.textContent=initial(c.name);av.style.background=c.color;document.getElementById(&#x27;callVideo&#x27;).style.display=type===&#x27;video&#x27;?&#x27;block&#x27;:&#x27;none&#x27;;document.getElementById(&#x27;cameraBtn&#x27;).style.display=type===&#x27;video&#x27;?&#x27;block&#x27;:&#x27;none&#x27;;document.getElementById(&#x27;callStatus&#x27;).textContent=&#x27;جارٍ الاتصال...&#x27;;try{callStream=await navigator.mediaDevices.getUserMedia({audio:true,video:type===&#x27;video&#x27;});if(type===&#x27;video&#x27;){document.getElementById(&#x27;callVideo&#x27;).srcObject=callStream;document.getElementById(&#x27;callAvatar&#x27;).style.display=&#x27;none&#x27;}document.getElementById(&#x27;callStatus&#x27;).textContent=&#x27;متصل الآن&#x27;}catch(e){document.getElementById(&#x27;callStatus&#x27;).textContent=&#x27;اتصال تجريبي — اسمح بالكاميرا والميكروفون لتفعيلهما&#x27;;toast(&#x27;لم يتم السماح بأذونات الاتصال&#x27;)} }
 function toggleMute(){muted=!muted;document.getElementById(&#x27;muteBtn&#x27;).innerHTML=icon(muted?&#x27;mute&#x27;:&#x27;mic&#x27;,22);callStream?.getAudioTracks().forEach(t=&gt;t.enabled=!muted)}function toggleCamera(){callStream?.getVideoTracks().forEach(t=&gt;t.enabled=!t.enabled);toast(&#x27;تم تبديل الكاميرا&#x27;)}
 function endCall(){callStream?.getTracks().forEach(t=&gt;t.stop());callStream=null;document.getElementById(&#x27;callOverlay&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;callVideo&#x27;).srcObject=null;document.getElementById(&#x27;callAvatar&#x27;).style.display=&#x27;flex&#x27;}
