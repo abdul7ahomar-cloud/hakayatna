@@ -917,7 +917,132 @@ body.site-locked #floating-second-letter-trigger{opacity:0;pointer-events:none;t
 @keyframes lockPlanet{to{transform:rotate(360deg)}}@keyframes lockStars{to{opacity:.35;transform:translateY(9px)}}@keyframes lockHeart{50%{transform:translateX(-50%) scale(1.08);filter:drop-shadow(0 0 12px #ff9ecc)}}@keyframes lockTwinkle{50%{opacity:.35;transform:scale(.8)}}@keyframes lockBoxIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}@keyframes lockIconFloat{50%{transform:translateY(-8px) rotate(2deg);box-shadow:0 26px 52px rgba(255,100,180,.38),inset 0 2px 0 rgba(255,255,255,.55)}}@keyframes lockIconPulse{50%{transform:scale(1.08)}}@keyframes lockSparkle{to{transform:rotate(360deg)}}
 @media(max-width:700px){.site-lock-box{padding:38px 18px 22px;border-radius:28px}.site-lock-copy{font-size:12px}.lock-input-wrap{height:52px}.site-lock-form{flex-direction:row}.site-lock-submit,.site-lock-biometric{font-size:11px;padding:0 5px}#hero .counter-orbit-shell{padding:14px 6px 8px;border-radius:30px}#hero .counter-wrapper{gap:7px}#hero .counter-item{width:calc(50% - 5px);min-height:112px;padding:18px 6px 13px;border-radius:21px}#hero .counter-value{font-size:clamp(28px,10vw,40px)}}
 </style>
-<style id="cairo-weather-style">.cairo-weather-card{width:min(760px,calc(100% - 18px));margin:18px auto 22px;padding:14px 17px;display:flex;align-items:center;gap:13px;direction:rtl;text-align:right;border-radius:24px;background:linear-gradient(120deg,rgba(106,212,255,.16),rgba(171,139,255,.13),rgba(255,158,204,.12));border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 34px rgba(0,0,0,.18);transition:transform .35s,box-shadow .35s,background .35s;animation:weatherCardIn .8s .18s both}.cairo-weather-card:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(0,0,0,.25)}.cairo-weather-icon{width:54px;height:54px;display:grid;place-items:center;flex:none;border-radius:18px;background:rgba(255,255,255,.15);font-size:30px;animation:weatherIconFloat 3s ease-in-out infinite}.cairo-weather-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:2px}.cairo-weather-kicker{font-size:11px;color:#b9efff;font-weight:800}.cairo-weather-copy strong{font-size:24px;color:#fff;line-height:1.15}.cairo-weather-copy span:last-child{font-size:12px;color:rgba(255,255,255,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cairo-weather-refresh{font-size:10px;color:rgba(255,255,255,.5);white-space:nowrap}.site-lock-icon::before{content:'💗';font-size:54px;filter:drop-shadow(0 0 14px rgba(255,100,180,.8));animation:heartLockPulse 1.8s ease-in-out infinite}.site-lock-icon::after{content:'🔒  ✦  ✧  ✦  🔒';font-size:12px;letter-spacing:5px}@keyframes weatherCardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}@keyframes weatherIconFloat{50%{transform:translateY(-5px) rotate(4deg)}}@keyframes heartLockPulse{50%{transform:scale(1.15);filter:drop-shadow(0 0 24px rgba(255,100,180,1))}}@media(max-width:500px){.cairo-weather-card{padding:12px;gap:9px}.cairo-weather-copy strong{font-size:20px}.cairo-weather-refresh{display:none}}</style></head> <body class="site-locked"></div>
+<style id="cairo-weather-style">.cairo-weather-card{width:min(760px,calc(100% - 18px));margin:18px auto 22px;padding:14px 17px;display:flex;align-items:center;gap:13px;direction:rtl;text-align:right;border-radius:24px;background:linear-gradient(120deg,rgba(106,212,255,.16),rgba(171,139,255,.13),rgba(255,158,204,.12));border:1px solid rgba(255,255,255,.2);box-shadow:0 14px 34px rgba(0,0,0,.18);transition:transform .35s,box-shadow .35s,background .35s;animation:weatherCardIn .8s .18s both}.cairo-weather-card:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(0,0,0,.25)}.cairo-weather-icon{width:54px;height:54px;display:grid;place-items:center;flex:none;border-radius:18px;background:rgba(255,255,255,.15);font-size:30px;animation:weatherIconFloat 3s ease-in-out infinite}.cairo-weather-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:2px}.cairo-weather-kicker{font-size:11px;color:#b9efff;font-weight:800}.cairo-weather-copy strong{font-size:24px;color:#fff;line-height:1.15}.cairo-weather-copy span:last-child{font-size:12px;color:rgba(255,255,255,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cairo-weather-refresh{font-size:10px;color:rgba(255,255,255,.5);white-space:nowrap}.site-lock-icon::before{content:'💗';font-size:54px;filter:drop-shadow(0 0 14px rgba(255,100,180,.8));animation:heartLockPulse 1.8s ease-in-out infinite}.site-lock-icon::after{content:'🔒  ✦  ✧  ✦  🔒';font-size:12px;letter-spacing:5px}@keyframes weatherCardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}@keyframes weatherIconFloat{50%{transform:translateY(-5px) rotate(4deg)}}@keyframes heartLockPulse{50%{transform:scale(1.15);filter:drop-shadow(0 0 24px rgba(255,100,180,1))}}@media(max-width:500px){.cairo-weather-card{padding:12px;gap:9px}.cairo-weather-copy strong{font-size:20px}.cairo-weather-refresh{display:none}}</style><style id="professional-theme-refresh">
+/* حكايتنا — Professional editorial theme refresh */
+:root {
+  --ink: #08111f;
+  --navy: #0d1b2e;
+  --plum: #241c35;
+  --rose: #e7a6a0;
+  --violet: #b8b9e8;
+  --sky: #9ed2d2;
+  --mint: #b8dfcf;
+  --pearl: #fffaf6;
+  --pearl-dim: rgba(255,250,246,.76);
+  --pearl-faint: rgba(255,250,246,.52);
+  --glass-bg: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045) 58%, rgba(231,166,160,.07));
+  --glass-bg-strong: linear-gradient(135deg, rgba(255,255,255,.2), rgba(255,255,255,.08));
+  --glass-border: rgba(255,250,246,.2);
+  --glass-highlight: rgba(255,250,246,.7);
+  --glass-shadow: 0 24px 70px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.16);
+  --radius-lg: 32px;
+  --radius-md: 24px;
+  --radius-sm: 16px;
+}
+
+html { background: var(--ink); }
+body {
+  background:
+    radial-gradient(900px 520px at 50% -9%, rgba(184,185,232,.16), transparent 68%),
+    radial-gradient(700px 520px at 93% 21%, rgba(231,166,160,.1), transparent 68%),
+    radial-gradient(650px 520px at 4% 64%, rgba(158,210,210,.08), transparent 70%),
+    linear-gradient(180deg, #08111f 0%, #0b1422 44%, #09111e 100%) !important;
+  color: var(--pearl) !important;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .18;
+  background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+#hero { padding-top: clamp(108px, 14vw, 160px) !important; }
+.hero-title {
+  max-width: 860px;
+  font-size: clamp(34px, 7.5vw, 68px) !important;
+  letter-spacing: -.045em;
+  text-shadow: 0 16px 44px rgba(0,0,0,.2);
+  background: linear-gradient(120deg, #fffdf9 12%, #f7ddd2 52%, #c8c8f0 92%) !important;
+}
+.hero-date { color: rgba(255,250,246,.6) !important; }
+
+.glass {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+.glass::after { opacity: .38 !important; animation-duration: 15s !important; }
+
+.daily-advice, .weather-card, .cairo-weather-card, .anniversary-countdown, .memory-wheel-shell, .music-shell {
+  border-color: rgba(255,250,246,.18) !important;
+}
+.daily-advice {
+  box-shadow: 0 18px 52px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.2) !important;
+}
+.daily-advice-mark { color: var(--rose) !important; filter: drop-shadow(0 0 14px rgba(231,166,160,.42)); }
+.daily-advice-category { color: #f0c2b9 !important; }
+
+#hero .counter-item {
+  background: linear-gradient(145deg, rgba(255,255,255,.145), rgba(255,255,255,.035) 64%, rgba(231,166,160,.08)) !important;
+  border-color: rgba(255,250,246,.2) !important;
+  box-shadow: 0 20px 46px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.24) !important;
+}
+#hero .counter-item:first-child { --counter-accent: #b8b9e8 !important; }
+#hero .counter-item:nth-child(2) { --counter-accent: #9ed2d2 !important; }
+#hero .counter-item:nth-child(3) { --counter-accent: #e7a6a0 !important; }
+#hero .counter-item:nth-child(4) { --counter-accent: #b8dfcf !important; }
+#hero .counter-value { text-shadow: 0 0 22px color-mix(in srgb, var(--counter-accent) 34%, transparent), 0 3px 18px rgba(0,0,0,.25) !important; }
+#hero .counter-label { background: rgba(255,255,255,.055) !important; color: rgba(255,250,246,.68) !important; }
+.orbit-wave, .orbit-ring { opacity: .3 !important; }
+
+.section { padding-top: clamp(76px, 10vw, 132px) !important; padding-bottom: clamp(76px, 10vw, 132px) !important; }
+.eyebrow { color: rgba(231,166,160,.82) !important; letter-spacing: .18em !important; }
+.section-title {
+  letter-spacing: -.035em;
+  background: linear-gradient(120deg, #fffaf6 20%, #f0c2b9 68%, #c8c8f0 100%) !important;
+}
+.section-sub { color: rgba(255,250,246,.66) !important; line-height: 1.95; }
+
+.btn { border-color: rgba(255,250,246,.2) !important; transition: transform .35s var(--ease-smooth), box-shadow .35s var(--ease-smooth), background .35s ease !important; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.25), 0 0 24px rgba(231,166,160,.18) !important; }
+.btn-primary { background: linear-gradient(115deg, #e9b3a9, #c7c7ed) !important; color: #182033 !important; box-shadow: 0 10px 28px rgba(0,0,0,.22), inset 0 1px rgba(255,255,255,.66) !important; }
+.btn-primary:hover { box-shadow: 0 16px 38px rgba(0,0,0,.28), 0 0 28px rgba(231,166,160,.28) !important; }
+
+.memory-wheel-shell, .music-shell { position: relative; overflow: hidden; }
+.memory-wheel-shell::before, .music-shell::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .42;
+  background: radial-gradient(circle at 84% 16%, rgba(231,166,160,.16), transparent 30%), radial-gradient(circle at 12% 92%, rgba(184,185,232,.13), transparent 34%);
+}
+.memory-wheel-copy, .music-copy { position: relative; z-index: 1; }
+.memory-wheel-result, .music-now, .music-mode { border-color: rgba(255,250,246,.16) !important; background: rgba(255,255,255,.055) !important; }
+.music-play { background: linear-gradient(135deg, #e9b3a9, #c7c7ed) !important; color: #172033 !important; }
+.music-mode:hover, .music-mode.is-active { border-color: rgba(231,166,160,.55) !important; background: rgba(231,166,160,.1) !important; }
+
+.weather-card, .cairo-weather-card { background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.035)) !important; }
+.weather-live-dot { background: #b8dfcf !important; box-shadow: 0 0 0 5px rgba(184,223,207,.1), 0 0 16px rgba(184,223,207,.8) !important; }
+.weather-refresh, .cairo-weather-refresh { color: #f0c2b9 !important; }
+
+footer { padding-top: 32px !important; border-top: 1px solid rgba(255,250,246,.08); }
+.footer-line { color: rgba(255,250,246,.44) !important; }
+
+@media (max-width: 700px) {
+  #hero { padding-top: 92px !important; }
+  .hero-title { font-size: clamp(32px, 10vw, 48px) !important; }
+  .section { padding-inline: 15px !important; }
+  .glass { border-radius: 24px !important; }
+  .daily-advice { width: min(100%, 420px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before { display: none; }
+}
+
+</style>
+</head> <body class="site-locked"></div>
 <button id="floating-second-letter-trigger" type="button" aria-label="افتحي رسالتي التانية" aria-controls="floating-second-letter-modal" aria-expanded="false"><span class="second-letter-icon">♥</span><span class="second-letter-spark">✦</span><span class="second-letter-label">كلام من قلبي ليكي</span></button>
 <div id="floating-second-letter-modal" role="dialog" aria-modal="true" aria-labelledby="floating-second-letter-title" aria-hidden="true"><div class="floating-letter-card"><div class="floating-letter-top"><span class="floating-letter-seal">♥</span><div><span class="floating-letter-kicker">A DEEPER MESSAGE FROM MY HEART</span><h2 class="floating-letter-title" id="floating-second-letter-title">أيوشة 🥹❤️</h2></div><button class="floating-letter-close" id="floating-second-letter-close" type="button" aria-label="إغلاق الرسالة">×</button></div><div class="floating-letter-body"><div class="floating-letter-text">أيوشة 🥹❤️
 
