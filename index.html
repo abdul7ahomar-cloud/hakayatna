@@ -3811,12 +3811,6 @@ window.playAppleUnlockAnimation=()=>{
 };
 </script>
 <script>
-(()=>{
-  const card=document.querySelector('.daily-home-card'), status=document.querySelector('#home-leaf-status'), frame=document.querySelector('.tree-embed');
-  const sync=()=>{try{const state=JSON.parse(localStorage.getItem('daily-tree-state-v1')||'{}');const n=Number(state.leafCount)||0;if(status)status.textContent=n?`ورقة رقم ${n} نورت الشجرة اليوم.`:'أول ورقة مستنيّاكم اليوم.';if(card)card.classList.add('is-ready')}catch(e){}};
-  sync(); if(frame)frame.addEventListener('load',()=>{sync();setTimeout(sync,500)}); window.addEventListener('pageshow',sync);
-})();
-</script><script>
 (()=>{const el=document.querySelector('.heartbeat-caption');if(!el)return;const msgs=['نبض حكايتنا لسه بيحكي ❤️','كل ثانية معاك ليها معنى','وجودك أجمل جزء في يومي','حكايتنا بتكبر يوم بعد يوم','قلبي بيختارك كل مرة','معاك الوقت بيعدّي أحلى'];let i=0;setInterval(()=>{i=(i+1)%msgs.length;el.animate([{opacity:.2,transform:'translateY(3px)'},{opacity:1,transform:'translateY(0)'}],{duration:500,easing:'ease-out'});el.textContent=msgs[i]},4200)})();
 </script><script>
 (()=>{
