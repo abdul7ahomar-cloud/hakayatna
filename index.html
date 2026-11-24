@@ -493,7 +493,7 @@ body.modal-open #bottom-nav-dock{opacity:0;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.heart-message-trigger,.heart-message-trigger .message-spark{animation:none}.heart-message-text::after{animation:none}}
 #zodiac-section{padding:70px 10px}.zodiac-section-head{text-align:center;margin:0 auto 25px}.zodiac-section-head .section-sub{margin:auto}.zodiac-embed{display:block;width:min(100%,520px);height:1450px;margin:auto;border:0;border-radius:30px;background:#030109;box-shadow:0 28px 90px #0008}@media(max-width:560px){.zodiac-embed{height:1350px}}
 #bony-section{padding-top:70px;padding-bottom:70px}
-#bony-section[hidden]{display:none}
+#bony-section[hidden]{display:none}#tree-section,#hourglass-section{padding:28px 10px 70px}#tree-section[hidden],#hourglass-section[hidden]{display:none}#tree-section .embedded-app-shell,#hourglass-section .embedded-app-shell{width:min(100%,980px);margin:0 auto}#tree-section .embedded-app-frame,#hourglass-section .embedded-app-frame{display:block;width:100%;height:760px;border:0;border-radius:28px;background:#0b1511;box-shadow:0 28px 90px #0008}@media(max-width:700px){#tree-section,#hourglass-section{padding-inline:6px}#tree-section .embedded-app-frame{height:760px}#hourglass-section .embedded-app-frame{height:700px}}
 #bony-section .bony-section-head{text-align:center;margin:0 auto 25px}
 #bony-section .bony-section-head .section-sub{margin:auto}
 .bony-embed{display:block;width:min(100%,920px);height:820px;margin:auto;border:0;border-radius:30px;background:#f4eee8;box-shadow:0 28px 90px rgba(0,0,0,.45)}
@@ -1303,8 +1303,8 @@ body.single-view-mode main>.page-view.view-transition-in{animation:sectionSwitch
 
     <a class="side-menu-link" href="#zodiac-section"><span class="side-menu-icon">✨</span><span>الأبراج والتوافق</span></a>
     <a class="side-menu-link" href="#bony-section"><span class="side-menu-icon">🎮</span><span>عالم بوني</span></a>
-    <a class="side-menu-link" href="my-3d-tree.html" aria-label="فتح شجرتي ثلاثية الأبعاد"><span class="side-menu-icon">🌳</span><span>شجرتي ثلاثية الأبعاد</span></a>
-    <a class="side-menu-link" href="hourglass.html" aria-label="فتح الساعة الرملية التفاعلية"><span class="side-menu-icon">⌛</span><span>الساعة الرملية التفاعلية</span></a>
+    <a class="side-menu-link" href="#tree-section" aria-label="فتح شجرتي ثلاثية الأبعاد"><span class="side-menu-icon">🌳</span><span>شجرتي ثلاثية الأبعاد</span></a>
+    <a class="side-menu-link" href="#hourglass-section" aria-label="فتح الساعة الرملية التفاعلية"><span class="side-menu-icon">⌛</span><span>الساعة الرملية التفاعلية</span></a>
     <div class="side-menu-message-group" aria-label="رسالة خاصة">
       <span class="side-menu-group-title">رسالة خاصة</span>
       <button aria-label="افتحي الجواب من القلب" class="heart-message-trigger side-menu-message-trigger" id="heart-message-trigger" type="button"><span aria-hidden="true" class="message-spark">✦</span><svg aria-hidden="true" viewBox="0 0 32 24"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h21A2.5 2.5 0 0 1 29 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-21A2.5 2.5 0 0 1 3 18.5z"/><path d="m4.2 5 11.8 9 11.8-9"/><path d="M4.2 19 12 12.8M27.8 19 20 12.8"/></svg><span class="side-menu-message-copy">جوابي ليكي</span><span aria-hidden="true" class="message-badge">♥</span></button>
@@ -3603,6 +3603,584 @@ const replies=[&#x27;أنا معاكي 🐻✨ احكيلي براحتك.&#x27;,
 &lt;/body&gt;
 &lt;/html&gt;
 "></iframe></section>
+<section class="section dock-only-section" id="tree-section" hidden aria-labelledby="tree-section-title"><div class="embedded-app-shell"><div class="embedded-section-head"><span class="eyebrow">HAKAYATNA</span><h2 class="section-title" id="tree-section-title">شجرتي ثلاثية الأبعاد</h2><p class="section-sub">هذه الصفحة مدمجة داخل الموقع الرئيسي.</p></div><iframe class="embedded-app-frame" title="شجرتي ثلاثية الأبعاد" loading="lazy" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;شجرتي ثلاثية الأبعاد&lt;/title&gt;
+&lt;style&gt;
+*{box-sizing:border-box}
+:root{color-scheme:dark}
+body{margin:0;background:#0b1511;color:#f3f4e9;font-family:Tahoma,Arial,sans-serif;overflow:hidden}
+.app{height:100dvh;display:grid;grid-template-columns:285px 1fr;grid-template-rows:74px 1fr}
+header{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;background:#14231c;border-bottom:1px solid #304538;z-index:2}
+h1{font-size:19px;margin:0}header p{margin:5px 0 0;color:#a9b9aa;font-size:12px}
+.head-tools{display:flex;align-items:center;gap:9px}.save-status{font-size:10px;color:#b9d0ae;white-space:nowrap}.count{background:linear-gradient(135deg,#2d4937,#203629);border:1px solid #557451;border-radius:13px;padding:10px 14px;font-size:13px;white-space:nowrap}
+aside{background:#14231c;border-left:1px solid #304538;padding:18px;overflow:auto;z-index:1}
+aside h2{font-size:16px;margin:0 0 7px}.hint{font-size:12px;color:#a9b9aa;line-height:1.8;margin:0 0 14px}
+.leaf-list{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.leaf-choice{position:relative;overflow:hidden;background:linear-gradient(145deg,#294334,#1b2e23);border:1px solid #49644e;border-radius:15px;padding:11px 5px;color:white;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+.leaf-choice:before{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,#ffffff12 50%,transparent 75%);transform:translateX(-120%);transition:transform .45s}
+.leaf-choice:hover:before{transform:translateX(120%)}
+.leaf-choice:hover,.leaf-choice.active{background:linear-gradient(145deg,#3b5b3e,#263d2d);border-color:#d1e7a8;transform:translateY(-2px);box-shadow:0 7px 20px #0004, inset 0 0 0 1px #d1e7a822}
+.leaf-choice.active:after{content:&quot;✓&quot;;position:absolute;top:5px;left:7px;width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:#d1e7a8;color:#203222;font-size:10px;font-weight:bold}
+.leaf-icon{display:block;font-size:27px;margin-bottom:5px}.leaf-choice small{font-size:11px;color:#d8e5d3}
+.selected-note{font-size:11px;color:#b9cbb5;line-height:1.8;margin:12px 0;min-height:34px}
+.actions{display:grid;gap:8px;margin-top:14px}
+button{font-family:inherit;cursor:pointer}
+.action{position:relative;border-radius:13px;padding:12px 11px;font-size:12px;font-weight:bold;transition:transform .18s,filter .18s,box-shadow .18s}
+.action:active{transform:scale(.97)}
+.main-btn{background:linear-gradient(135deg,#d8e9b2,#a9c77e);color:#1a2b1e;box-shadow:0 5px 15px #9bbd6b22}
+.sub-btn{background:linear-gradient(135deg,#304b3b,#20372b);color:#edf2e9;border:1px solid #526e56;box-shadow:0 5px 15px #0002}
+.stage{position:relative;min-width:0;min-height:0;background:radial-gradient(ellipse at 50% 43%,#2b4535 0%,#192b21 53%,#0b1511 100%)}
+#scene{width:100%;height:100%;display:block;touch-action:none;outline:none}
+.tip{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:#0b1511d9;border:1px solid #405b47;border-radius:30px;padding:10px 15px;font-size:11px;color:#e0eadb;white-space:nowrap;pointer-events:none}
+#toast{position:absolute;top:15px;left:50%;transform:translate(-50%,-10px);opacity:0;transition:.2s;background:#d3e5b1;color:#1b2a1c;padding:9px 15px;border-radius:20px;font-size:12px;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:650px){
+ .app{grid-template-columns:1fr;grid-template-rows:62px 1fr auto}
+ header{grid-row:1;padding:9px 13px}h1{font-size:16px}header p{font-size:10px}.save-status{font-size:9px}.count{padding:8px 9px;font-size:11px}.head-tools{gap:5px}
+ aside{grid-row:3;border:0;border-top:1px solid #304538;padding:10px 12px;max-height:205px}
+ aside h2{font-size:13px;margin-bottom:4px}.hint{font-size:10px;margin-bottom:8px}
+ .leaf-list{grid-template-columns:repeat(4,1fr);gap:6px}
+ .leaf-choice{padding:6px 2px}.leaf-icon{font-size:22px;margin-bottom:1px}.leaf-choice small{font-size:9px}
+ .selected-note{display:none}.actions{display:flex;margin-top:8px}.action{flex:1;padding:9px 4px;font-size:10px}
+ .stage{grid-row:2}.tip{font-size:9px;bottom:8px;padding:8px 10px}
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;app&quot;&gt;
+&lt;header&gt;
+ &lt;div&gt;&lt;h1&gt;🌳 شجرتي الصغيرة&lt;/h1&gt;&lt;p&gt;اختر ورقة، ثم ازرعها على أغصان الشجرة • يُحفظ تقدمك تلقائيًا على جهازك&lt;/p&gt;&lt;/div&gt;
+ &lt;div class=&quot;head-tools&quot;&gt;&lt;span class=&quot;save-status&quot; id=&quot;saveStatus&quot;&gt;● الحفظ المحلي مفعّل&lt;/span&gt;&lt;div class=&quot;count&quot;&gt;🍃 عدد الأوراق: &lt;strong id=&quot;count&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/header&gt;
+&lt;aside&gt;
+ &lt;h2&gt;اختر شكل الورقة&lt;/h2&gt;
+ &lt;p class=&quot;hint&quot;&gt;حدد شكل الورقة ولونها، ثم انقر على غصن. تقدمك يُحفظ تلقائيًا على هذا الجهاز.&lt;/p&gt;
+ &lt;div class=&quot;leaf-list&quot;&gt;
+  &lt;button class=&quot;leaf-choice active&quot; data-color=&quot;#4f963d&quot; data-name=&quot;أخضر طبيعي&quot;&gt;&lt;span class=&quot;leaf-icon&quot;&gt;🍃&lt;/span&gt;&lt;small&gt;أخضر طبيعي&lt;/small&gt;&lt;/button&gt;
+  &lt;button class=&quot;leaf-choice&quot; data-color=&quot;#91bd50&quot; data-name=&quot;أخضر فاتح&quot;&gt;&lt;span class=&quot;leaf-icon&quot;&gt;🌿&lt;/span&gt;&lt;small&gt;أخضر فاتح&lt;/small&gt;&lt;/button&gt;
+  &lt;button class=&quot;leaf-choice&quot; data-color=&quot;#d5a447&quot; data-name=&quot;ذهبي خريفي&quot;&gt;&lt;span class=&quot;leaf-icon&quot;&gt;🍂&lt;/span&gt;&lt;small&gt;ذهبي خريفي&lt;/small&gt;&lt;/button&gt;
+  &lt;button class=&quot;leaf-choice&quot; data-color=&quot;#bd5940&quot; data-name=&quot;أحمر خريفي&quot;&gt;&lt;span class=&quot;leaf-icon&quot;&gt;🍁&lt;/span&gt;&lt;small&gt;أحمر خريفي&lt;/small&gt;&lt;/button&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;selected-note&quot; id=&quot;selectedNote&quot;&gt;اللون المحدد: أخضر طبيعي. انقر على غصن لإضافة ورقة.&lt;/div&gt;
+ &lt;div class=&quot;actions&quot;&gt;
+  &lt;button class=&quot;action main-btn&quot; id=&quot;undo&quot;&gt;↶ تراجع عن آخر ورقة&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;stage&quot;&gt;
+ &lt;canvas id=&quot;scene&quot;&gt;&lt;/canvas&gt;
+ &lt;div id=&quot;toast&quot;&gt;🍃 تمت إضافة الورقة&lt;/div&gt;
+ &lt;div class=&quot;tip&quot;&gt;اسحب للتدوير • عجلة الفأرة للتقريب • انقر على غصن لوضع ورقة&lt;/div&gt;
+&lt;/main&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;importmap&quot;&gt;
+{&quot;imports&quot;:{&quot;three&quot;:&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js&quot;,&quot;three/addons/&quot;:&quot;https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/&quot;}}
+&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import * as THREE from &#x27;three&#x27;;
+import {OrbitControls} from &#x27;three/addons/controls/OrbitControls.js&#x27;;
+
+const canvas=document.querySelector(&#x27;#scene&#x27;),stage=document.querySelector(&#x27;.stage&#x27;);
+const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x192b21,12,27);
+const camera=new THREE.PerspectiveCamera(34,1,.1,100);camera.position.set(7.8,5.8,10.5);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:&#x27;high-performance&#x27;});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.target.set(0,2.65,0);controls.enableDamping=true;controls.dampingFactor=.075;
+controls.rotateSpeed=.72;controls.zoomSpeed=.8;controls.minDistance=5.5;controls.maxDistance=17;
+controls.maxPolarAngle=Math.PI*.49;
+
+scene.add(new THREE.HemisphereLight(0xe8f3dc,0x3b4939,1.65));
+const key=new THREE.DirectionalLight(0xffe8c7,3.1);key.position.set(5,9,6);key.castShadow=true;
+key.shadow.mapSize.set(2048,2048);key.shadow.camera.left=-7;key.shadow.camera.right=7;key.shadow.camera.top=8;key.shadow.camera.bottom=-3;key.shadow.bias=-.00025;scene.add(key);
+const fill=new THREE.DirectionalLight(0xb9d9c0,1.05);fill.position.set(-6,4,-5);scene.add(fill);
+
+// Subtle procedural bark texture.
+function barkTexture(){
+ const c=document.createElement(&#x27;canvas&#x27;);c.width=256;c.height=512;const ctx=c.getContext(&#x27;2d&#x27;);
+ ctx.fillStyle=&#x27;#765039&#x27;;ctx.fillRect(0,0,256,512);
+ for(let i=0;i&lt;700;i++){const x=Math.random()*256,y=Math.random()*512,w=1+Math.random()*4,h=8+Math.random()*70;
+  ctx.fillStyle=Math.random()&gt;.5?&#x27;rgba(35,20,12,.17)&#x27;:&#x27;rgba(210,157,103,.12)&#x27;;ctx.fillRect(x,y,w,h);}
+ const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(2,1);return t;
+}
+const bark=new THREE.MeshStandardMaterial({map:barkTexture(),color:0xc1a083,roughness:1});
+const branchMat=new THREE.MeshStandardMaterial({color:0x79583e,roughness:.95});
+const branchMeshes=[];
+function limb(a,b,r1,r2,mat=branchMat){
+ const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=B.clone().sub(A);
+ const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r2,r1,d.length(),12,1),mat);
+ mesh.position.copy(A).add(B).multiplyScalar(.5);mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());
+ mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);branchMeshes.push(mesh);return mesh;
+}
+limb([0,0,0],[.03,2.05,0],.27,.17,bark);
+limb([.03,2.05,0],[-.08,3.75,.02],.17,.105,bark);
+limb([-.08,3.75,.02],[.1,5.05,0],.105,.025,bark);
+const limbs=[
+ [[0,1.05,0],[-1.45,2.05,.08],.105,.025],[[.01,1.45,0],[1.5,2.4,.1],.11,.025],
+ [[-.04,2.05,0],[-1.75,3.2,.08],.12,.025],[[0,2.25,0],[1.7,3.48,-.1],.12,.025],
+ [[-.06,2.75,0],[-1.12,3.95,-.16],.09,.02],[[0,3.05,0],[1.08,4.25,.12],.09,.02],
+ [[-.05,3.55,0],[-.78,4.65,.1],.075,.015],[[.02,3.9,0],[.82,4.8,-.1],.075,.015],
+ [[-1.45,2.05,.08],[-2.05,2.35,.2],.045,.009],[[-1.45,2.05,.08],[-1.8,1.78,-.1],.04,.008],
+ [[1.5,2.4,.1],[2.08,2.7,-.1],.045,.009],[[1.5,2.4,.1],[1.82,2.08,.2],.04,.008],
+ [[-1.75,3.2,.08],[-2.2,3.55,.24],.045,.008],[[-1.75,3.2,.08],[-2.1,2.92,-.2],.04,.008],
+ [[1.7,3.48,-.1],[2.18,3.85,.1],.045,.008],[[1.7,3.48,-.1],[2.1,3.18,-.25],.04,.008],
+ [[-1.12,3.95,-.16],[-1.52,4.3,.08],.04,.008],[[1.08,4.25,.12],[1.48,4.55,-.1],.04,.008],
+ [[-.78,4.65,.1],[-1.06,4.98,-.1],.035,.006],[[.82,4.8,-.1],[1.12,5.08,.1],.035,.006],
+ [[-.9,2.55,.1],[-1.3,2.83,.42],.05,.008],[[.95,2.9,-.1],[1.35,3.18,-.4],.05,.008],
+ [[-.6,3.4,.1],[-.92,3.72,.43],.04,.007],[[.6,3.8,-.1],[.9,4.08,-.4],.04,.007],
+ [[-2.05,2.35,.2],[-2.35,2.5,.24],.025,.004],[[2.08,2.7,-.1],[2.4,2.84,-.15],.025,.004],
+ [[-2.2,3.55,.24],[-2.48,3.72,.3],.025,.004],[[2.18,3.85,.1],[2.45,4.03,.2],.025,.004],
+ [[-1.52,4.3,.08],[-1.78,4.45,.2],.022,.004],[[1.48,4.55,-.1],[1.72,4.72,-.2],.022,.004]
+];
+for(const p of limbs)limb(...p);
+const base=new THREE.Mesh(new THREE.CylinderGeometry(.72,.86,.2,48),new THREE.MeshStandardMaterial({color:0x604630,roughness:1}));
+base.position.y=-.1;base.castShadow=true;base.receiveShadow=true;scene.add(base);
+const ground=new THREE.Mesh(new THREE.CircleGeometry(5.4,80),new THREE.MeshStandardMaterial({color:0x263a2b,roughness:1}));
+ground.rotation.x=-Math.PI/2;ground.position.y=-.205;ground.receiveShadow=true;scene.add(ground);
+
+// Leaf geometry: softly curved blade, pointed tip, center rib and fine lateral veins.
+function makeLeafGeometry(){
+ const positions=[],uvs=[],indices=[];const rows=20,cols=8;
+ for(let i=0;i&lt;=rows;i++){
+  const t=i/rows,halfWidth=Math.pow(Math.sin(Math.PI*t),.82)*.145*(.82+.18*Math.sin(t*Math.PI));
+  for(let j=0;j&lt;=cols;j++){
+   const u=j/cols*2-1;
+   const x=u*halfWidth;
+   const y=t*.39;
+   const z=.035*Math.sin(Math.PI*t)*(1-u*u)+.012*Math.sin(t*Math.PI*2)*u;
+   positions.push(x,y,z);uvs.push(j/cols,t);
+  }
+ }
+ for(let i=0;i&lt;rows;i++)for(let j=0;j&lt;cols;j++){
+  const a=i*(cols+1)+j,b=a+cols+1;indices.push(a,b,a+1,b,b+1,a+1);
+ }
+ const g=new THREE.BufferGeometry();g.setAttribute(&#x27;position&#x27;,new THREE.Float32BufferAttribute(positions,3));g.setAttribute(&#x27;uv&#x27;,new THREE.Float32BufferAttribute(uvs,2));g.setIndex(indices);g.computeVertexNormals();return g;
+}
+const leafGeo=makeLeafGeometry();
+const leafStemGeo=new THREE.CylinderGeometry(.004,.007,.085,5);
+const veinMaterial=new THREE.MeshBasicMaterial({color:0xd9e7b9,transparent:true,opacity:.46});
+const leaves=[];let selectedColor=&#x27;#4f963d&#x27;;
+const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
+const worldUp=new THREE.Vector3(0,1,0);
+function saveProgress(){
+ try{
+  const data=leaves.map(l=&gt;({
+   color:l.userData.leafColor,
+   position:l.position.toArray(),
+   quaternion:l.quaternion.toArray(),
+   scale:l.userData.targetScale||l.scale.x
+  }));
+  localStorage.setItem(&#x27;myTreeProgressV2&#x27;,JSON.stringify(data));
+  const status=document.querySelector(&#x27;#saveStatus&#x27;);
+  status.textContent=&#x27;● تم الحفظ على جهازك&#x27;;
+ }catch(e){
+  document.querySelector(&#x27;#saveStatus&#x27;).textContent=&#x27;تعذر الحفظ المحلي&#x27;;
+ }
+}
+function createLeaf(point,normal,restored=null){
+ const colorHex=restored?.color||selectedColor;
+ const group=new THREE.Group();
+ const color=new THREE.Color(colorHex);
+ const mat=new THREE.MeshStandardMaterial({color,roughness:.58,metalness:0,side:THREE.DoubleSide});
+ const blade=new THREE.Mesh(leafGeo,mat);blade.castShadow=true;blade.receiveShadow=true;group.add(blade);
+ const mid=new THREE.Mesh(new THREE.CylinderGeometry(.003,.006,.31,5),new THREE.MeshStandardMaterial({color:color.clone().multiplyScalar(.62),roughness:.8}));
+ mid.position.y=.19;group.add(mid);
+ for(let k=1;k&lt;=4;k++){
+  const t=k/5,half=Math.pow(Math.sin(Math.PI*t),.82)*.12;
+  for(const sign of [-1,1]){
+   const start=new THREE.Vector3(0,t*.39,.036*Math.sin(Math.PI*t));
+   const end=new THREE.Vector3(sign*half*.82,Math.min(.39,t*.39+.055),.025);
+   const dir=end.clone().sub(start),v=new THREE.Mesh(new THREE.CylinderGeometry(.0014,.0023,dir.length(),4),veinMaterial);
+   v.position.copy(start).add(end).multiplyScalar(.5);v.quaternion.setFromUnitVectors(worldUp,dir.normalize());group.add(v);
+  }
+ }
+ const stem=new THREE.Mesh(leafStemGeo,new THREE.MeshStandardMaterial({color:0x78934c,roughness:1}));
+ stem.position.y=-.035;stem.rotation.z=-.12;group.add(stem);
+
+ if(restored){
+  group.position.fromArray(restored.position);
+  group.quaternion.fromArray(restored.quaternion);
+  group.userData.targetScale=restored.scale;
+  group.scale.setScalar(restored.scale);
+  group.userData.age=1;
+ }else{
+  const n=normal.clone().normalize();
+  const outward=new THREE.Vector3((Math.random()-.5)*.65,.55+(Math.random()*.3),(Math.random()-.5)*.65).normalize();
+  if(Math.abs(outward.dot(n))&lt;.12)outward.add(n.multiplyScalar(.45)).normalize();
+  group.quaternion.setFromUnitVectors(worldUp,outward);
+  group.rotateY(Math.random()*Math.PI*2);
+  const scale=.78+Math.random()*.55;
+  group.scale.setScalar(.001);group.userData.targetScale=scale;group.userData.age=0;
+  group.position.copy(point).add(outward.clone().multiplyScalar(.055));
+ }
+ group.userData.leafColor=colorHex;
+ scene.add(group);leaves.push(group);
+ document.querySelector(&#x27;#count&#x27;).textContent=leaves.length;
+ if(!restored){saveProgress();toast(&#x27;🍃 تمت زراعة الورقة&#x27;);}
+}
+function restoreProgress(){
+ try{
+  const raw=localStorage.getItem(&#x27;myTreeProgressV2&#x27;);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  if(!Array.isArray(data))return;
+  data.slice(0,1500).forEach(item=&gt;{
+   if(item&amp;&amp;Array.isArray(item.position)&amp;&amp;Array.isArray(item.quaternion)&amp;&amp;item.position.length===3&amp;&amp;item.quaternion.length===4&amp;&amp;typeof item.color===&#x27;string&#x27;){
+    createLeaf(null,null,item);
+   }
+  });
+  document.querySelector(&#x27;#count&#x27;).textContent=leaves.length;
+  document.querySelector(&#x27;#saveStatus&#x27;).textContent=&#x27;● تم استرجاع تقدمك&#x27;;
+ }catch(e){
+  document.querySelector(&#x27;#saveStatus&#x27;).textContent=&#x27;لا توجد بيانات محفوظة&#x27;;
+ }
+}
+function toast(msg){const el=document.querySelector(&#x27;#toast&#x27;);el.textContent=msg;el.classList.add(&#x27;show&#x27;);clearTimeout(toast.timer);toast.timer=setTimeout(()=&gt;el.classList.remove(&#x27;show&#x27;),1100)}
+// Distinguish a click from a camera drag to avoid accidental leaf placement.
+let down=null;
+canvas.addEventListener(&#x27;pointerdown&#x27;,e=&gt;{down={x:e.clientX,y:e.clientY,id:e.pointerId};});
+canvas.addEventListener(&#x27;pointerup&#x27;,e=&gt;{
+ if(!down||down.id!==e.pointerId)return;
+ const moved=Math.hypot(e.clientX-down.x,e.clientY-down.y);down=null;
+ if(moved&gt;7)return;
+ const rect=canvas.getBoundingClientRect();
+ pointer.x=((e.clientX-rect.left)/rect.width)*2-1;
+ pointer.y=-((e.clientY-rect.top)/rect.height)*2+1;
+ raycaster.setFromCamera(pointer,camera);
+ const hits=raycaster.intersectObjects(branchMeshes,false);
+ if(hits.length){
+  const hit=hits[0],normal=hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
+  createLeaf(hit.point,normal);
+ }
+});
+document.querySelectorAll(&#x27;.leaf-choice&#x27;).forEach(btn=&gt;btn.addEventListener(&#x27;click&#x27;,()=&gt;{
+ document.querySelectorAll(&#x27;.leaf-choice&#x27;).forEach(x=&gt;x.classList.remove(&#x27;active&#x27;));
+ btn.classList.add(&#x27;active&#x27;);selectedColor=btn.dataset.color;
+ document.querySelector(&#x27;#selectedNote&#x27;).textContent=&#x27;اللون المحدد: &#x27;+btn.dataset.name+&#x27;. انقر على غصن لإضافة ورقة.&#x27;;
+}));
+function removeLeaf(leaf){scene.remove(leaf);leaf.traverse(o=&gt;{if(o.isMesh){o.geometry.dispose();if(Array.isArray(o.material))o.material.forEach(m=&gt;m.dispose());else if(o.material!==veinMaterial)o.material.dispose();}});}
+document.querySelector(&#x27;#undo&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const l=leaves.pop();if(l)removeLeaf(l);document.querySelector(&#x27;#count&#x27;).textContent=leaves.length;saveProgress();});
+restoreProgress();
+
+const clock=new THREE.Clock();
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
+new ResizeObserver(resize).observe(stage);resize();
+function animate(){
+ requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.04);
+ for(const l of leaves){if(l.userData.age&lt;1){l.userData.age=Math.min(1,l.userData.age+dt*5);const t=1-Math.pow(1-l.userData.age,3);l.scale.setScalar(l.userData.targetScale*t);}}
+ controls.update();renderer.render(scene,camera);
+}
+animate();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe></div></section><section class="section dock-only-section" id="hourglass-section" hidden aria-labelledby="hourglass-section-title"><div class="embedded-app-shell"><div class="embedded-section-head"><span class="eyebrow">HAKAYATNA</span><h2 class="section-title" id="hourglass-section-title">الساعة الرملية التفاعلية</h2><p class="section-sub">هذه الصفحة مدمجة داخل الموقع الرئيسي.</p></div><iframe class="embedded-app-frame" title="الساعة الرملية التفاعلية" loading="lazy" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
+&lt;title&gt;ساعة رملية | مؤقت DEM&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;display=swap&quot;&gt;
+&lt;style&gt;
+:root{color-scheme:dark;--ink:#f5e8d3;--mute:#aeb8c5;--brass:#e5c080;--brass2:#a77b42;--night:#0b1421;--panel:#ffffff0d;--line:#ffffff26;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;height:100%;overflow:hidden;font-family:Cairo,Tahoma,Arial,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 50% 30%,#26384c,var(--night) 66%,#060a11)}
+[hidden]{display:none!important}
+.app{height:100%;display:flex;flex-direction:column;gap:8px;padding:8px 12px 10px;max-width:860px;margin:0 auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+h1{font-size:20px;margin:0;color:#f0d4a4;line-height:1.2}
+h1 small{display:block;font-size:11px;font-weight:400;color:var(--mute)}
+#stage{position:relative;flex:1;min-height:220px}
+#stage canvas{width:100%;height:100%;display:block;touch-action:none}
+#error{display:none;position:absolute;inset:10px;z-index:3;align-items:center;justify-content:center;text-align:center;padding:18px;border:1px solid #a65e48;background:#351d1d;border-radius:14px;color:#ffd7a0}
+#status{position:absolute;inset-inline:0;bottom:2px;text-align:center;font-size:12px;color:var(--mute);pointer-events:none}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px;display:grid;gap:10px}
+.time{display:grid;gap:6px;justify-items:center}
+#clock{font-size:38px;font-weight:700;line-height:1;color:#f2d29a;font-variant-numeric:tabular-nums;letter-spacing:1px}
+.panel.done #clock{color:#ff9d6b}
+.bar{width:100%;height:6px;border-radius:3px;background:#ffffff1a;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass2),var(--brass))}
+.chips,.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,select,input{font:inherit;font-size:14px;min-height:44px;border-radius:12px;border:1px solid #d5b47b66;color:#f7e8ce;background:linear-gradient(#51412e,#30271d);padding:0 14px;cursor:pointer}
+.chips button{min-width:58px;padding:0 10px;background:#ffffff0f;border-color:var(--line)}
+.chips button.on{background:linear-gradient(135deg,var(--brass),var(--brass2));color:#24190c;border:0;font-weight:700}
+input{cursor:text;width:92px;text-align:center;background:#ffffff0f;border-color:var(--line)}
+.row button{flex:1;max-width:180px}
+button.primary{background:linear-gradient(135deg,var(--brass),var(--brass2));border:0;color:#24190c;font-weight:700;flex:1.4}
+button:disabled{opacity:.45}
+:is(button,input,select):focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+#gear{min-height:40px;width:40px;padding:0;background:var(--panel);border-color:var(--line)}
+#menu{display:grid;gap:10px;background:#101a28f2;border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13px}
+#menu label{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#menu input[type=checkbox]{width:22px;min-height:22px}
+#menu select{min-height:38px}
+#stats{font-size:11px;color:var(--mute)}
+@media(max-height:620px){#clock{font-size:30px}.panel{gap:6px;padding:8px}button,input{min-height:38px}}
+&lt;/style&gt;
+&lt;script type=&quot;importmap&quot;&gt;
+{&quot;imports&quot;:{&quot;three&quot;:&quot;https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js&quot;,&quot;three/addons/&quot;:&quot;https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/&quot;}}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main class=&quot;app&quot;&gt;
+&lt;header&gt;
+&lt;h1&gt;♾️&lt;small&gt;مؤقت بمحاكاة حبيبية DEM&lt;/small&gt;&lt;/h1&gt;
+&lt;button id=&quot;gear&quot; aria-label=&quot;الإعدادات&quot; aria-expanded=&quot;false&quot;&gt;⚙&lt;/button&gt;
+&lt;/header&gt;
+&lt;div id=&quot;menu&quot; hidden&gt;
+&lt;label&gt;دقة الرمل &lt;select id=&quot;quality&quot;&gt;&lt;option value=&quot;1400&quot;&gt;خفيفة&lt;/option&gt;&lt;option value=&quot;2200&quot; selected&gt;متوازنة&lt;/option&gt;&lt;option value=&quot;3200&quot;&gt;دقيقة&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+&lt;label&gt;صوت التنبيه &lt;input type=&quot;checkbox&quot; id=&quot;sound&quot; checked&gt;&lt;/label&gt;
+&lt;label&gt;إحصائيات المحاكاة &lt;input type=&quot;checkbox&quot; id=&quot;showStats&quot;&gt;&lt;/label&gt;
+&lt;div id=&quot;stats&quot; hidden&gt;&lt;/div&gt;
+&lt;div class=&quot;sub&quot; style=&quot;color:var(--mute)&quot;&gt;اسحب لتدوير الساعة، وقرّب بإصبعين للتكبير.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;stage&quot;&gt;&lt;div id=&quot;error&quot;&gt;&lt;/div&gt;&lt;div id=&quot;status&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;section class=&quot;panel&quot; id=&quot;panel&quot;&gt;
+&lt;div class=&quot;time&quot;&gt;&lt;div id=&quot;clock&quot;&gt;01:00&lt;/div&gt;&lt;div class=&quot;bar&quot;&gt;&lt;i id=&quot;fill&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;chips&quot; id=&quot;chips&quot;&gt;
+&lt;button data-s=&quot;30&quot;&gt;30 ث&lt;/button&gt;&lt;button data-s=&quot;60&quot; class=&quot;on&quot;&gt;1 د&lt;/button&gt;&lt;button data-s=&quot;180&quot;&gt;3 د&lt;/button&gt;&lt;button data-s=&quot;300&quot;&gt;5 د&lt;/button&gt;&lt;button data-s=&quot;600&quot;&gt;10 د&lt;/button&gt;
+&lt;input id=&quot;custom&quot; type=&quot;number&quot; min=&quot;0.25&quot; max=&quot;60&quot; step=&quot;0.25&quot; inputmode=&quot;decimal&quot; placeholder=&quot;دقائق&quot; aria-label=&quot;مدة مخصصة بالدقائق&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;button class=&quot;primary&quot; id=&quot;go&quot;&gt;▶ ابدأ&lt;/button&gt;&lt;button id=&quot;flip&quot;&gt;⟳ اقلب&lt;/button&gt;&lt;button id=&quot;reset&quot;&gt;↺ إعادة&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;/main&gt;
+
+&lt;script&gt;
+/* ===== DEM core: spheres with spin, spring-dashpot normal force, Cundall-Strack friction, rolling resistance ===== */
+const Sim=(()=&gt;{
+ const MAXN=3200,R=.018,DT=1e-3,MC=10,KN=6000,GN=35,KT=1100,GT=9,MU=.5,MUR=.25,GW=60,ZH=.45,G=9.81;
+const p=new Float64Array(MAXN*3),v=new Float64Array(MAXN*3),w=new Float64Array(MAXN*3),f=new Float64Array(MAXN*3),q=new Float64Array(MAXN*3);
+const rad=new Float64Array(MAXN),im=new Float64Array(MAXN),ii=new Float64Array(MAXN);
+const CS=.04,X0=-1.2,Y0=-2.1,NX=60,NY=105,head=new Int32Array(NX*NX*NY).fill(-1),nxt=new Int32Array(MAXN),cell=new Int32Array(MAXN);
+const cid=new Int32Array(MAXN*MC),cst=new Int32Array(MAXN*MC).fill(-9),hx=new Float64Array(MAXN*MC),hy=new Float64Array(MAXN*MC),hz=new Float64Array(MAXN*MC);
+const OFF=[];for(let dy=-1;dy&lt;=1;dy++)for(let dz=-1;dz&lt;=1;dz++)for(let dx=-1;dx&lt;=1;dx++)OFF.push(dx+dz*NX+dy*NX*NX);
+const WP=[[0,.11],[.12,.115],[.31,.195],[.59,.345],[.88,.535],[1.15,.715],[1.41,.875],[1.64,.98],[1.79,1.015],[1.94,.99]];
+const RT=new Float64Array(210);
+for(let k=0;k&lt;210;k++){const a=k*.01;let r=.99;for(let n=1;n&lt;WP.length;n++){const[y1,r1]=WP[n-1],[y2,r2]=WP[n];if(a&lt;=y2){r=r1+(r2-r1)*(a-y1)/(y2-y1);break;}}RT[k]=r;}
+let WR=0,SL=0;
+function wallAt(ay){const kk=Math.min(ay*100,205),k=kk|0,a=RT[k],b=RT[k+1];WR=a+(b-a)*(kk-k);SL=(b-a)*100;}
+let rng=87341;const rand=()=&gt;{rng=(rng*1664525+1013904223)&gt;&gt;&gt;0;return rng/4294967296;};
+const S={n:0,p,rad,gx:0,gy:-G,G,up:1,lock:true,drag:0,contacts:0,steps:0,MAXN};
+
+S.reset=function(n){
+ n=Math.min(n,MAXN);rng=87341;cst.fill(-9);v.fill(0);w.fill(0);S.steps=0;
+ for(let i=0;i&lt;n;i++){rad[i]=R*(.94+rand()*.12);const m=Math.pow(rad[i]/R,3);im[i]=1/m;ii[i]=2.5/(m*rad[i]*rad[i]);}
+ let c=0;const sp=R*2.08;
+ for(let y=.22,row=0;c&lt;n&amp;&amp;y&lt;1.85;y+=sp,row++){wallAt(y);const lim=WR-R*1.4,o=(row%2)*.5;
+  for(let iz=-30;iz&lt;=30&amp;&amp;c&lt;n;iz++)for(let ix=-30;ix&lt;=30&amp;&amp;c&lt;n;ix++){
+   const x=(ix+o)*sp,z=(iz+o)*sp;
+   if(x*x+z*z&lt;lim*lim){const k=c*3;p[k]=x+(rand()-.5)*.001;p[k+1]=y;p[k+2]=z+(rand()-.5)*.001;c++;}
+  }}
+ S.n=c;
+};
+function slot(i,j,st){
+ const b=i*MC;let free=-1;
+ for(let k=b;k&lt;b+MC;k++){if(cid[k]===j&amp;&amp;cst[k]&gt;=st-1){cst[k]=st;return k;}if(free&lt;0&amp;&amp;cst[k]&lt;st-1)free=k;}
+ if(free&lt;0)free=b;cid[free]=j;cst[free]=st;hx[free]=hy[free]=hz[free]=0;return free;
+}
+function pair(i,j,st){
+ const a=i*3,b=j*3,dx=p[b]-p[a],dy=p[b+1]-p[a+1],dz=p[b+2]-p[a+2],ri=rad[i],rj=rad[j],rr=ri+rj,d2=dx*dx+dy*dy+dz*dz;
+ if(d2&gt;=rr*rr||d2&lt;1e-12)return;
+ const d=Math.sqrt(d2),nx=dx/d,ny=dy/d,nz=dz/d,over=rr-d;
+ const rx=v[b]-v[a]-rj*(w[b+1]*nz-w[b+2]*ny)-ri*(w[a+1]*nz-w[a+2]*ny);
+ const ry=v[b+1]-v[a+1]-rj*(w[b+2]*nx-w[b]*nz)-ri*(w[a+2]*nx-w[a]*nz);
+ const rz=v[b+2]-v[a+2]-rj*(w[b]*ny-w[b+1]*nx)-ri*(w[a]*ny-w[a+1]*nx);
+ const vn=rx*nx+ry*ny+rz*nz,fn=Math.max(0,KN*over-GN*vn);
+ const tx=rx-vn*nx,ty=ry-vn*ny,tz=rz-vn*nz,k=slot(i,j,st);
+ let h0=hx[k]+tx*DT,h1=hy[k]+ty*DT,h2=hz[k]+tz*DT;const pr=h0*nx+h1*ny+h2*nz;h0-=pr*nx;h1-=pr*ny;h2-=pr*nz;
+ let fx=-KT*h0-GT*tx,fy=-KT*h1-GT*ty,fz=-KT*h2-GT*tz;const ft=Math.hypot(fx,fy,fz),mx=MU*fn;
+ if(ft&gt;mx){const s=mx/ft;fx*=s;fy*=s;fz*=s;h0=-(fx+GT*tx)/KT;h1=-(fy+GT*ty)/KT;h2=-(fz+GT*tz)/KT;}
+ hx[k]=h0;hy[k]=h1;hz[k]=h2;
+ const Fx=fn*nx+fx,Fy=fn*ny+fy,Fz=fn*nz+fz;
+ f[a]-=Fx;f[a+1]-=Fy;f[a+2]-=Fz;f[b]+=Fx;f[b+1]+=Fy;f[b+2]+=Fz;
+ const cx=ny*fz-nz*fy,cy=nz*fx-nx*fz,cz=nx*fy-ny*fx;
+ q[a]-=ri*cx;q[a+1]-=ri*cy;q[a+2]-=ri*cz;q[b]-=rj*cx;q[b+1]-=rj*cy;q[b+2]-=rj*cz;
+ let ox=w[a]-w[b],oy=w[a+1]-w[b+1],oz=w[a+2]-w[b+2];const on=ox*nx+oy*ny+oz*nz;ox-=on*nx;oy-=on*ny;oz-=on*nz;
+ const om=Math.hypot(ox,oy,oz);
+ if(om&gt;1e-9){const tau=MUR*fn*(ri*rj/rr)/Math.max(om,.5);q[a]-=tau*ox;q[a+1]-=tau*oy;q[a+2]-=tau*oz;q[b]+=tau*ox;q[b+1]+=tau*oy;q[b+2]+=tau*oz;}
+ S.contacts++;
+}
+function wallC(i,nx,ny,nz,over){
+ const a=i*3,r=rad[i];
+ const rx=v[a]-r*(w[a+1]*nz-w[a+2]*ny),ry=v[a+1]-r*(w[a+2]*nx-w[a]*nz),rz=v[a+2]-r*(w[a]*ny-w[a+1]*nx);
+ const vn=rx*nx+ry*ny+rz*nz,fn=Math.max(0,KN*over-GN*vn);
+ const tx=rx-vn*nx,ty=ry-vn*ny,tz=rz-vn*nz,tm=Math.hypot(tx,ty,tz),mg=tm&gt;1e-9?Math.min(MU*fn,GW*tm)/tm:0;
+ const fx=-tx*mg,fy=-ty*mg,fz=-tz*mg;
+ f[a]+=fn*nx+fx;f[a+1]+=fn*ny+fy;f[a+2]+=fn*nz+fz;
+ q[a]-=r*(ny*fz-nz*fy);q[a+1]-=r*(nz*fx-nx*fz);q[a+2]-=r*(nx*fy-ny*fx);
+ let ox=w[a],oy=w[a+1],oz=w[a+2];const on=ox*nx+oy*ny+oz*nz;ox-=on*nx;oy-=on*ny;oz-=on*nz;
+ const om=Math.hypot(ox,oy,oz);if(om&gt;1e-9){const tau=MUR*fn*r/Math.max(om,.5);q[a]-=tau*ox;q[a+1]-=tau*oy;q[a+2]-=tau*oz;}
+ S.contacts++;
+}
+function bounds(i){
+ const a=i*3,x=p[a],y=p[a+1],z=p[a+2],r=rad[i],rho=Math.hypot(x,z);
+ wallAt(Math.abs(y));
+ // true surface normal of the sloped glass (not just radial)
+ const m=SL*(y&lt;0?-1:1),inv=1/Math.sqrt(1+m*m),over=r-(WR-rho)*inv;
+ if(over&gt;0&amp;&amp;rho&gt;1e-8){
+  const nx=-x/rho*inv,ny=m*inv,nz=-z/rho*inv;wallC(i,nx,ny,nz,over);
+  if(over&gt;.6*r){const s=over-.6*r;p[a]+=nx*s;p[a+1]+=ny*s;p[a+2]+=nz*s;}
+ }
+ const lo=-1.91+r,hi=1.91-r;
+ if(y&lt;lo){wallC(i,0,1,0,lo-y);if(lo-y&gt;.6*r)p[a+1]=lo-.6*r;}
+ else if(y&gt;hi){wallC(i,0,-1,0,y-hi);if(y-hi&gt;.6*r)p[a+1]=hi+.6*r;}
+}
+	S.step=function(){
+	 const n=S.n,st=++S.steps;f.fill(0,0,n*3);q.fill(0,0,n*3);S.contacts=0;
+	 // تصفير جميع رؤوس الخلايا قبل إعادة بناء القائمة؛ ترك خلية قديمة
+	 // يؤدي إلى اصطدامات وهمية وقد يوقف سقوط الرمل بعد عدة إطارات.
+	 head.fill(-1);
+	 for(let i=0;i&lt;n;i++){
+	  const a=i*3,cx=Math.min(NX-2,Math.max(1,((p[a]-X0)/CS)|0)),cz=Math.min(NX-2,Math.max(1,((p[a+2]-X0)/CS)|0)),cy=Math.min(NY-2,Math.max(1,((p[a+1]-Y0)/CS)|0));
+	  const c=cx+cz*NX+cy*NX*NX;cell[i]=c;nxt[i]=head[c];head[c]=i;
+	 }
+ for(let i=0;i&lt;n;i++){
+  const c=cell[i];
+  for(let o=0;o&lt;27;o++)for(let j=head[c+OFF[o]];j&gt;=0;j=nxt[j])if(j&gt;i)pair(i,j,st);
+  bounds(i);
+ }
+	 const gx=S.gx,gy=S.gy,Dc=S.drag,lock=S.lock;
+ for(let i=0;i&lt;n;i++){
+  const a=i*3,m=im[i],ay=Math.abs(p[a+1]);
+  v[a]+=(f[a]*m+gx)*DT;v[a+1]+=(f[a+1]*m+gy)*DT;v[a+2]+=f[a+2]*m*DT;
+  if(lock){if(ay&lt;.38){v[a]=v[a+1]=v[a+2]=0;}}
+  else if(Dc&gt;0&amp;&amp;ay&lt;ZH){const k=1+Dc*(1-ay/ZH)*m*DT;v[a]/=k;v[a+1]/=k;v[a+2]/=k;} // implicit neck drag = flow valve
+  const s=ii[i]*DT;w[a]=(w[a]+q[a]*s)*.9995;w[a+1]=(w[a+1]+q[a+1]*s)*.9995;w[a+2]=(w[a+2]+q[a+2]*s)*.9995;
+  v[a]*=.9999;v[a+1]*=.9999;v[a+2]*=.9999;
+  p[a]+=v[a]*DT;p[a+1]+=v[a+1]*DT;p[a+2]+=v[a+2]*DT;
+ }
+};
+// fraction of sand that has passed the neck (smooth), measured along the gravity-down side
+S.progress=function(){let s=0;for(let i=0;i&lt;S.n;i++){const u=S.up*p[i*3+1];s+=Math.min(1,Math.max(0,.5-u/.4));}return s/S.n;};
+S.DT=DT;
+return S;})();
+&lt;/script&gt;
+
+&lt;script type=&quot;module&quot;&gt;
+import * as THREE from &#x27;three&#x27;;
+import {OrbitControls} from &#x27;three/addons/controls/OrbitControls.js&#x27;;
+const S=Sim,$=s=&gt;document.querySelector(s);
+const host=$(&#x27;#stage&#x27;),errorBox=$(&#x27;#error&#x27;);
+function fail(s){errorBox.style.display=&#x27;flex&#x27;;errorBox.textContent=&#x27;تعذّر تشغيل الساعة: &#x27;+s;}
+window.addEventListener(&#x27;error&#x27;,e=&gt;{if(e.message)fail(e.message)});
+window.addEventListener(&#x27;unhandledrejection&#x27;,e=&gt;fail(e.reason?.message||&#x27;فشل تحميل مكتبة 3D&#x27;));
+
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(34,1,.1,100);
+camera.position.set(4.4,2.1,8.1);camera.lookAt(0,0,0);
+let renderer;
+try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});}
+catch(e){fail(&#x27;المتصفح لا يدعم WebGL.&#x27;);throw e;}
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+host.appendChild(renderer.domElement);
+const orbit=new OrbitControls(camera,renderer.domElement);
+orbit.enableDamping=true;orbit.dampingFactor=.06;orbit.minDistance=4.5;orbit.maxDistance=13;
+scene.add(new THREE.HemisphereLight(0xdceaff,0x50351d,1.35));
+const keyLight=new THREE.DirectionalLight(0xffe5c4,3.2);keyLight.position.set(4,7,5);keyLight.castShadow=true;keyLight.shadow.mapSize.set(1024,1024);scene.add(keyLight);
+const fill=new THREE.DirectionalLight(0x9ecaff,1.3);fill.position.set(-5,2,-4);scene.add(fill);
+const warm=new THREE.PointLight(0xffc879,18,12);warm.position.set(2,-.7,3);scene.add(warm);
+
+const rig=new THREE.Group();scene.add(rig);
+const wood=new THREE.MeshStandardMaterial({color:0x79502c,roughness:.34,metalness:.12});
+const darkWood=new THREE.MeshStandardMaterial({color:0x352316,roughness:.5});
+const brass=new THREE.MeshStandardMaterial({color:0xc49a5b,metalness:.72,roughness:.25});
+const glassMat=new THREE.MeshPhysicalMaterial({color:0xeaf5ff,roughness:.075,transmission:.82,thickness:.12,ior:1.47,side:THREE.DoubleSide,transparent:true,opacity:.32,depthWrite:false});
+const outer=[[.98,-1.98],[1.025,-1.92],[1.05,-1.8],[1.015,-1.63],[.91,-1.4],[.75,-1.14],[.57,-.87],[.38,-.59],[.23,-.31],[.15,-.12],[.145,0],[.15,.12],[.23,.31],[.38,.59],[.57,.87],[.75,1.14],[.91,1.4],[1.015,1.63],[1.05,1.8],[1.025,1.92],[.98,1.98]];
+const inner=[[.95,-1.94],[.99,-1.89],[1.015,-1.79],[.98,-1.64],[.875,-1.41],[.715,-1.15],[.535,-.88],[.345,-.59],[.195,-.31],[.115,-.12],[.11,0],[.115,.12],[.195,.31],[.345,.59],[.535,.88],[.715,1.15],[.875,1.41],[.98,1.64],[1.015,1.79],[.99,1.89],[.95,1.94]];
+const shell=outer.concat([...inner].reverse()).map(([r,y])=&gt;new THREE.Vector2(r,y));
+const glass=new THREE.Mesh(new THREE.LatheGeometry(shell,160),glassMat);glass.renderOrder=5;rig.add(glass);
+const glintMat=new THREE.MeshBasicMaterial({color:0xf4f8ff,transparent:true,opacity:.6});
+for(const a of [-.42,.42]){const c=new THREE.CatmullRomCurve3(outer.map(([r,y])=&gt;new THREE.Vector3(r*Math.cos(a),y,r*Math.sin(a))));rig.add(new THREE.Mesh(new THREE.TubeGeometry(c,150,.009,8,false),glintMat));}
+function cap(y){const s=y&gt;0?-1:1,m=new THREE.Mesh(new THREE.CylinderGeometry(1.04,1.04,.18,96),wood);m.position.y=y;m.castShadow=true;rig.add(m);
+ const t=new THREE.Mesh(new THREE.TorusGeometry(1.025,.035,12,100),brass);t.rotation.x=Math.PI/2;t.position.y=y+s*.02;rig.add(t);
+ const d=new THREE.Mesh(new THREE.CylinderGeometry(.9,.9,.02,96),darkWood);d.position.y=y+s*.101;rig.add(d);
+ const h=new THREE.Mesh(new THREE.CylinderGeometry(.15,.15,.026,48),brass);h.position.y=y+s*.12;rig.add(h);}
+cap(2.03);cap(-2.03);
+const base=new THREE.Mesh(new THREE.PlaneGeometry(100,100),new THREE.MeshStandardMaterial({color:0x101a28,roughness:.9}));base.rotation.x=-Math.PI/2;base.position.y=-2.22;scene.add(base);
+
+const sand=new THREE.InstancedMesh(new THREE.SphereGeometry(1,10,8),new THREE.MeshStandardMaterial({color:0xd7a34e,roughness:.98}),S.MAXN);
+sand.instanceMatrix.setUsage(THREE.DynamicDrawUsage);sand.castShadow=true;sand.receiveShadow=true;rig.add(sand);
+{const pal=[0xb87929,0xc58b36,0xd49b45,0xe2b45d,0xf0c979,0xc18a37],c=new THREE.Color();for(let i=0;i&lt;S.MAXN;i++){c.setHex(pal[(i*7919)%pal.length]);sand.setColorAt(i,c);}}
+const dummy=new THREE.Object3D();
+function updateMeshes(){const p=S.p,r=S.rad;for(let i=0;i&lt;S.n;i++){const k=i*3;dummy.position.set(p[k],p[k+1],p[k+2]);dummy.scale.setScalar(r[i]);dummy.updateMatrix();sand.setMatrixAt(i,dummy.matrix);}sand.count=S.n;sand.instanceMatrix.needsUpdate=true;}
+function resize(){const w=Math.max(1,host.clientWidth),h=Math.max(1,host.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(host);resize();
+
+/* ===== Timer + flow control ===== */
+// The neck acts as a valve: a PI controller on &quot;seconds behind schedule&quot; tunes drag so the sand empties exactly when the countdown ends.
+let mode=&#x27;idle&#x27;,paused=false,T=60,t=0,I=0,frac0=0,theta=0,target=0,quality=900,soundOn=true;
+const KP=.6,KI=.09;
+const clockEl=$(&#x27;#clock&#x27;),fillEl=$(&#x27;#fill&#x27;),statusEl=$(&#x27;#status&#x27;),panel=$(&#x27;#panel&#x27;),goBtn=$(&#x27;#go&#x27;);
+const fmt=s=&gt;{s=Math.max(0,Math.ceil(s));return String(Math.floor(s/60)).padStart(2,&#x27;0&#x27;)+&#x27;:&#x27;+String(s%60).padStart(2,&#x27;0&#x27;);};
+function setStatus(){statusEl.textContent=mode===&#x27;idle&#x27;?&#x27;الرمل محجوز. اختر المدة ثم اضغط ابدأ.&#x27;:mode===&#x27;done&#x27;?&#x27;انتهى الوقت.&#x27;:paused?&#x27;متوقفة مؤقتًا.&#x27;:&#x27;الرمل يتدفق.&#x27;;}
+function ui(){clockEl.textContent=fmt(mode===&#x27;idle&#x27;?T:T-t);fillEl.style.width=(mode===&#x27;idle&#x27;?0:Math.min(100,t/T*100))+&#x27;%&#x27;;
+ goBtn.textContent=mode===&#x27;run&#x27;?(paused?&#x27;▶ استئناف&#x27;:&#x27;Ⅱ إيقاف مؤقت&#x27;):mode===&#x27;done&#x27;?&#x27;▶ ابدأ من جديد&#x27;:&#x27;▶ ابدأ&#x27;;
+ panel.classList.toggle(&#x27;done&#x27;,mode===&#x27;done&#x27;);setStatus();}
+let ac;
+function audio(){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume&amp;&amp;ac.resume();}catch(e){}}
+function alarm(){
+ if(soundOn&amp;&amp;ac)try{[0,.35,.7].forEach(d=&gt;{const o=ac.createOscillator(),g=ac.createGain(),t0=ac.currentTime+d;o.frequency.value=880;o.connect(g);g.connect(ac.destination);g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.25,t0+.02);g.gain.exponentialRampToValueAtTime(.0001,t0+.3);o.start(t0);o.stop(t0+.32);});}catch(e){}
+ if(navigator.vibrate)navigator.vibrate([200,100,200]);
+}
+function flip(){target+=Math.PI;S.up=-S.up;
+ if(mode===&#x27;run&#x27;){t=0;I=0;frac0=S.progress();}else{mode=&#x27;idle&#x27;;S.lock=true;S.drag=0;}
+ paused=false;ui();}
+function start(){
+ audio();
+ if(mode===&#x27;run&#x27;){paused=!paused;ui();return;}
+ if(S.progress()&gt;.5){target+=Math.PI;S.up=-S.up;}
+ t=0;I=0;frac0=S.progress();mode=&#x27;run&#x27;;paused=false;S.lock=false;S.drag=40*T;ui();
+}
+function fullReset(){
+ mode=&#x27;idle&#x27;;paused=false;t=0;I=0;theta=target=0;S.up=1;S.lock=true;S.drag=0;S.reset(quality);rig.rotation.z=0;updateMeshes();ui();
+}
+function control(dt){
+ const prog=(S.progress()-frac0)/Math.max(.05,1-frac0),lag=t-prog*T;
+ I=Math.max(-7/KI,Math.min(8/KI,I+lag*dt));
+ const s=Math.max(-7,Math.min(8,KP*lag+KI*I));
+ S.drag=s&gt;=7.9?0:40*T*Math.exp(-s);
+ t+=dt;
+ if(t&gt;=T){t=T;mode=&#x27;done&#x27;;S.drag=0;S.lock=false;alarm();}
+}
+$(&#x27;#chips&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const b=e.target.closest(&#x27;button[data-s]&#x27;);if(!b||mode===&#x27;run&#x27;)return;
+ T=+b.dataset.s;$(&#x27;#custom&#x27;).value=&#x27;&#x27;;document.querySelectorAll(&#x27;#chips button&#x27;).forEach(x=&gt;x.classList.toggle(&#x27;on&#x27;,x===b));if(mode===&#x27;done&#x27;){mode=&#x27;idle&#x27;;S.lock=true;}ui();});
+$(&#x27;#custom&#x27;).addEventListener(&#x27;input&#x27;,e=&gt;{const m=parseFloat(e.target.value);if(!(m&gt;0)||mode===&#x27;run&#x27;)return;
+ T=Math.max(15,Math.min(3600,Math.round(m*60)));document.querySelectorAll(&#x27;#chips button&#x27;).forEach(x=&gt;x.classList.remove(&#x27;on&#x27;));if(mode===&#x27;done&#x27;){mode=&#x27;idle&#x27;;S.lock=true;}ui();});
+goBtn.onclick=start;$(&#x27;#flip&#x27;).onclick=flip;$(&#x27;#reset&#x27;).onclick=fullReset;
+$(&#x27;#gear&#x27;).onclick=e=&gt;{const m=$(&#x27;#menu&#x27;);m.hidden=!m.hidden;e.currentTarget.setAttribute(&#x27;aria-expanded&#x27;,String(!m.hidden));setTimeout(resize,0);};
+$(&#x27;#quality&#x27;).onchange=e=&gt;{quality=+e.target.value;fullReset();};
+$(&#x27;#sound&#x27;).onchange=e=&gt;{soundOn=e.target.checked;};
+$(&#x27;#showStats&#x27;).onchange=e=&gt;{$(&#x27;#stats&#x27;).hidden=!e.target.checked;};
+
+let last=performance.now(),acc=0;
+function animate(now){
+ requestAnimationFrame(animate);
+ const dt=Math.min((now-last)/1000,.05);last=now;
+ theta+=(target-theta)*(1-Math.exp(-6*dt));rig.rotation.z=theta;
+ S.gx=-S.G*Math.sin(theta);S.gy=-S.G*Math.cos(theta); // gravity expressed in the glass frame
+ if(!(mode===&#x27;run&#x27;&amp;&amp;paused)){
+  acc=Math.min(acc+dt,.05);let n=0;
+  while(acc&gt;=S.DT&amp;&amp;n&lt;28){S.step();acc-=S.DT;n++;}
+  if(mode===&#x27;run&#x27;)control(dt);
+ }
+ if(mode===&#x27;run&#x27;||mode===&#x27;done&#x27;)ui();
+ updateMeshes();orbit.update();renderer.render(scene,camera);
+ if(!$(&#x27;#stats&#x27;).hidden)$(&#x27;#stats&#x27;).textContent=&#x27;حبيبات: &#x27;+S.n+&#x27; • تلامسات: &#x27;+S.contacts+&#x27; • خطوات: &#x27;+S.steps+(mode===&#x27;run&#x27;?&#x27; • كبح العنق: &#x27;+Math.round(S.drag):&#x27;&#x27;);
+}
+fullReset();requestAnimationFrame(animate);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></div></section>
 </main> <div aria-label="التنقّل والأدوات السريعة" id="bottom-nav-dock">
 <a class="bottom-nav-item" href="#hero" data-view="hero"><span aria-hidden="true" class="bottom-nav-icon"><svg viewBox="0 0 24 24" role="img"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><span class="bottom-nav-label">الرئيسية</span></a>
 <a class="bottom-nav-item" href="#countdown"><span aria-hidden="true" class="bottom-nav-icon"><svg viewBox="0 0 24 24" role="img"><path d="M6 3h12"/><path d="M6 21h12"/><path d="M7 3c0 5 5 5 5 9s-5 4-5 9"/><path d="M17 3c0 5-5 5-5 9s5 4 5 9"/></svg></span><span class="bottom-nav-label">الوقت سوا</span></a>
@@ -3766,7 +4344,7 @@ document.addEventListener("DOMContentLoaded",()=>{updateCounters(),initAnniversa
 </script>
 <script>
 (()=>{
-  const ids=['hero','countdown','memory-wheel','music-section','zodiac-section','bony-section'];
+  const ids=['hero','countdown','memory-wheel','music-section','zodiac-section','bony-section','tree-section','hourglass-section'];
   const views=ids.map(id=>document.getElementById(id)).filter(Boolean);
   const links=[...document.querySelectorAll('#bottom-nav-dock .bottom-nav-item')];
   let transitionTimer;
@@ -3775,7 +4353,7 @@ document.addEventListener("DOMContentLoaded",()=>{updateCounters(),initAnniversa
     views.forEach(v=>{v.classList.remove('view-current','page-view','view-transition-in');v.hidden=false;});
     views.forEach(v=>{v.classList.add('page-view');});
     const chosen=document.getElementById(id)||document.getElementById('hero');
-    views.forEach(v=>{if(v!==chosen){v.classList.remove('view-current');if(v.id==='bony-section')v.hidden=true;}});
+    views.forEach(v=>{if(v!==chosen){v.classList.remove('view-current');v.hidden=true;}});
     chosen.hidden=false;chosen.classList.add('view-current');
     document.body.classList.add('single-view-mode');
     clearTimeout(transitionTimer);
@@ -3786,6 +4364,7 @@ document.addEventListener("DOMContentLoaded",()=>{updateCounters(),initAnniversa
     window.scrollTo({top:0,behavior:'smooth'});
   };
   show('hero');
+  window.hakayatnaShow=show;
   links.forEach(link=>link.addEventListener('click',e=>{
     const href=link.getAttribute('href')||'';
     const id=href.startsWith('#')?href.slice(1):'';
@@ -3888,7 +4467,7 @@ paint();
   const setOpen=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'إغلاق القائمة الجانبية':'فتح القائمة الجانبية');menu.classList.toggle('is-open',open);backdrop.classList.toggle('is-open',open);menu.setAttribute('aria-hidden',String(!open));backdrop.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('menu-open',open);if(open)close.focus();else toggle.focus();};
   toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));
   close.addEventListener('click',()=>setOpen(false)); backdrop.addEventListener('click',()=>setOpen(false));
-  menu.querySelectorAll('.side-menu-link').forEach(link=>link.addEventListener('click',e=>{const href=link.getAttribute('href')||'';if(!href.startsWith('#')){setOpen(false);return;}e.preventDefault();const dockLink=document.querySelector('#bottom-nav-dock .bottom-nav-item[href="'+href+'"]');if(dockLink)dockLink.click();else{const target=document.querySelector(href);if(target){if(href==='#bony-section')target.hidden=false;document.body.classList.remove('single-view-mode');target.scrollIntoView({behavior:'smooth',block:'start'});}}setOpen(false);}));
+  menu.querySelectorAll('.side-menu-link').forEach(link=>link.addEventListener('click',e=>{const href=link.getAttribute('href')||'';if(!href.startsWith('#')){setOpen(false);return;}e.preventDefault();const dockLink=document.querySelector('#bottom-nav-dock .bottom-nav-item[href="'+href+'"]');if(dockLink)dockLink.click();else if(window.hakayatnaShow&&['tree-section','hourglass-section'].includes(href.slice(1)))window.hakayatnaShow(href.slice(1));else{const target=document.querySelector(href);if(target){if(href==='#bony-section')target.hidden=false;document.body.classList.remove('single-view-mode');target.scrollIntoView({behavior:'smooth',block:'start'});}}setOpen(false);}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true')setOpen(false);});
 })();
 </script>
