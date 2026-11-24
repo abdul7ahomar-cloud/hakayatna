@@ -1823,7 +1823,7 @@ button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
 .astra-reading p,.oracle-card p,.compatibility-item p,.compatibility-more{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.astra-reading p{font-size:.92rem;line-height:1.65}.oracle-card p{font-size:.86rem;line-height:1.6}.astra-profile-card li:nth-child(n+3){display:none}.astra-profile-card ul{gap:5px}.astra-profile-card{padding:14px}.gemini-tools{margin:12px auto 16px;padding:12px;border:1px solid rgba(255,214,139,.22);border-radius:16px;background:linear-gradient(120deg,rgba(255,214,139,.1),rgba(255,255,255,.04));max-width:450px}.gemini-tools summary{cursor:pointer;color:#ffe8b5;font-size:12px;font-weight:700}.gemini-tools-body{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.gemini-tools input{flex:1;min-width:190px;padding:9px 11px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.18);color:#fff;font:inherit;font-size:11px}.gemini-tools button{padding:9px 12px;border:0;border-radius:10px;background:linear-gradient(120deg,#ffd98a,#ff9ecc);color:#2a1724;font:700 11px inherit;cursor:pointer}.gemini-status{display:block;width:100%;color:rgba(255,255,255,.58);font-size:10px;margin-top:4px}.gemini-output{display:none;margin-top:9px;padding:9px;border-radius:10px;background:rgba(0,0,0,.16);color:#fff0ca;font-size:11px;line-height:1.6}.gemini-output.is-visible{display:block}
 &lt;style&gt;
 /* وضع القراءة المختصر: محتوى يومي واضح بدون ازدحام */
-.astra-collapsible,.astra-toggle,.compatibility-more,.compatibility-grid{display:none!important}.astra-page{min-height:0!important}.astra-shell{padding-bottom:18px}.astra-hero{min-height:230px!important}.astra-reading{padding-top:17px!important;padding-bottom:17px!important}.astra-reading .astra-eyebrow{font-size:9px}.astra-reading h2{font-size:1.1rem;margin-bottom:6px}.astra-reading p{margin-bottom:10px!important;-webkit-line-clamp:1!important;font-size:.82rem!important}.astra-cta{padding:8px 12px!important;font-size:10px!important}.daily-oracle{padding:16px!important;margin-top:10px!important}.oracle-head{margin-bottom:9px!important}.oracle-head h2{font-size:1.15rem!important}.oracle-day-title{font-size:1rem!important;margin-bottom:10px!important}.oracle-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}.oracle-card{min-height:66px!important;padding:10px!important}.oracle-card span{font-size:9px!important}.oracle-card strong{font-size:1.35rem!important}.oracle-card p{font-size:.72rem!important;line-height:1.45!important;-webkit-line-clamp:2!important}.oracle-card small{font-size:8px!important}.oracle-footer{font-size:8px!important;margin-top:10px!important}.zodiac-nav{margin-bottom:10px!important}
+.astra-collapsible,.astra-toggle,.compatibility-more,.compatibility-grid{display:none!important}.compatibility.is-open .compatibility-grid{display:grid!important}.compatibility.is-open .compatibility-more{display:block!important}.astra-page{min-height:0!important}.astra-shell{padding-bottom:18px}.astra-hero{min-height:230px!important}.astra-reading{padding-top:17px!important;padding-bottom:17px!important}.astra-reading .astra-eyebrow{font-size:9px}.astra-reading h2{font-size:1.1rem;margin-bottom:6px}.astra-reading p{margin-bottom:10px!important;-webkit-line-clamp:1!important;font-size:.82rem!important}.astra-cta{padding:8px 12px!important;font-size:10px!important}.daily-oracle{padding:16px!important;margin-top:10px!important}.oracle-head{margin-bottom:9px!important}.oracle-head h2{font-size:1.15rem!important}.oracle-day-title{font-size:1rem!important;margin-bottom:10px!important}.oracle-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}.oracle-card{min-height:66px!important;padding:10px!important}.oracle-card span{font-size:9px!important}.oracle-card strong{font-size:1.35rem!important}.oracle-card p{font-size:.72rem!important;line-height:1.45!important;-webkit-line-clamp:2!important}.oracle-card small{font-size:8px!important}.oracle-footer{font-size:8px!important;margin-top:10px!important}.zodiac-nav{margin-bottom:10px!important}
 &lt;/style&gt;&lt;/style&gt;&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -2971,6 +2971,7 @@ function cancelMotion(){
  gazeTargetY=0;
  nextGazeChange=performance.now()+700;
 }
+window.cancelMotion=cancelMotion;
 
 function runMotion(name,duration,frame,message){
  cancelMotion();
@@ -3588,7 +3589,7 @@ body:has(#chatPanel.open) .controls,body:has(#chatPanel.open) #bonyHud,body:has(
 (function(){
   const popupMarkup=()=&gt;`&lt;!doctype html&gt;&lt;html lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;شات بوني 🐻&lt;/title&gt;&lt;style&gt;
 *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,Tahoma,sans-serif;background:linear-gradient(145deg,#fffaf5,#f6e4e2 56%,#e9e1f1);color:#543c38}body{display:flex;overflow:hidden}.app{display:flex;flex-direction:column;width:100%;height:100%;max-width:620px;margin:auto}.head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 18px 15px;background:linear-gradient(135deg,#fffdf9,#ffe5e4);border-bottom:1px solid #ead6d3;box-shadow:0 3px 18px #754d3712}.identity{display:flex;align-items:center;gap:11px}.avatar{display:grid;place-items:center;width:52px;height:52px;border-radius:18px;background:radial-gradient(circle at 35% 25%,#fff,#ffd7d2 55%,#e6b4be);font-size:28px;box-shadow:0 7px 18px #9d596320}.name{font-size:17px;font-weight:900}.status{margin-top:3px;color:#9c7d77;font-size:11px}.status:before{content:&#x27;● &#x27;;color:#6ec187}.close{width:34px;height:34px;border:0;border-radius:11px;background:#ffffff9c;color:#876c66;font-size:17px;cursor:pointer}.messages{flex:1;overflow:auto;padding:20px 16px;display:flex;flex-direction:column;gap:11px}.msg{max-width:88%;padding:12px 15px;border-radius:20px;font-size:14px;line-height:1.7;white-space:pre-wrap;box-shadow:0 5px 14px #70483c12}.bony{align-self:flex-start;background:#fffaf5;border:1px solid #e4cfc8;border-bottom-right-radius:6px}.user{align-self:flex-end;background:linear-gradient(135deg,#795b51,#5e443f);color:#fff;border-bottom-left-radius:6px}.quick{display:flex;gap:6px;overflow:auto;padding:0 12px 10px;scrollbar-width:none}.quick::-webkit-scrollbar{display:none}.quick button{flex:none;border:1px solid #dfc4c1;background:#ffffffa8;color:#795a55;border-radius:999px;padding:8px 10px;font-size:10px;cursor:pointer;white-space:nowrap}.form{display:flex;gap:8px;padding:12px;border-top:1px solid #ead6d3;background:#ffffff70}.input{flex:1;min-width:0;border:1px solid #dfc5c0;border-radius:18px;padding:12px 14px;font:inherit;outline:0;background:#fffdfb;color:#543c38}.send{width:49px;border:0;border-radius:16px;background:linear-gradient(135deg,#d9788d,#a977a7);color:#fff;font-size:18px;cursor:pointer}.hint{text-align:center;padding:0 12px 10px;color:#a68983;font-size:9px}.typing{opacity:.6;font-style:italic}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&quot;app&quot;&gt;&lt;header class=&quot;head&quot;&gt;&lt;div class=&quot;identity&quot;&gt;&lt;div class=&quot;avatar&quot;&gt;🐻&lt;/div&gt;&lt;div&gt;&lt;div class=&quot;name&quot;&gt;بوني&lt;/div&gt;&lt;div class=&quot;status&quot;&gt;جاهز للكلام واللعب&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class=&quot;close&quot; id=&quot;close&quot; title=&quot;إغلاق&quot;&gt;✕&lt;/button&gt;&lt;/header&gt;&lt;section class=&quot;messages&quot; id=&quot;messages&quot;&gt;&lt;div class=&quot;msg bony&quot;&gt;أهلًا يا أيوشة! 🐻✨ أنا بوني. النافذة دي مخصصة لكلامنا عشان تفضلي شايفاني كامل.&lt;/div&gt;&lt;/section&gt;&lt;div class=&quot;quick&quot;&gt;&lt;button data-text=&quot;احكيلي عن يومي&quot;&gt;احكيلي عن يومي 💬&lt;/button&gt;&lt;button data-text=&quot;نلعب إيه؟&quot;&gt;نلعب إيه؟ 🎮&lt;/button&gt;&lt;button data-text=&quot;خليني أفرح&quot;&gt;خليني أفرح ✨&lt;/button&gt;&lt;button data-text=&quot;قولي حاجة حلوة&quot;&gt;قولي حاجة حلوة 🤍&lt;/button&gt;&lt;/div&gt;&lt;form class=&quot;form&quot; id=&quot;form&quot;&gt;&lt;input class=&quot;input&quot; id=&quot;input&quot; autocomplete=&quot;off&quot; placeholder=&quot;اكتبي لبوني...&quot; autofocus&gt;&lt;button class=&quot;send&quot; type=&quot;submit&quot;&gt;➤&lt;/button&gt;&lt;/form&gt;&lt;div class=&quot;hint&quot;&gt;نافذة شات مستقلة — تقدري تحركيها وتكبّريها براحتك&lt;/div&gt;&lt;/main&gt;&lt;script&gt;
-const replies=[&#x27;أنا معاكي 🐻✨ احكيلي براحتك.&#x27;,&#x27;نلعب ونغيّر لبسي ونكمّل المهمات 🎮&#x27;,&#x27;يا سلام على الكلام الحلو ده! فرحتيني 🥰&#x27;,&#x27;خدي نفس كده… يومك هيبقى ألطف 🤍&#x27;,&#x27;افتحي اللعبة الرئيسية لو عايزة تغيّري الملابس والخلفيات 👕&#x27;];const API_PATH=&#x27;/api/chat&#x27;;async function askGemini(text){try{const r=await fetch(API_PATH,{method:&#x27;POST&#x27;,headers:{&#x27;Content-Type&#x27;:&#x27;application/json&#x27;},body:JSON.stringify({mode:&#x27;chat&#x27;,text})});if(!r.ok)throw new Error(&#x27;proxy &#x27;+r.status);const d=await r.json();return d?.text?.trim()||null}catch(e){return null}}const messages=document.getElementById(&#x27;messages&#x27;),input=document.getElementById(&#x27;input&#x27;);function add(t,c){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;msg &#x27;+c;x.textContent=t;messages.appendChild(x);messages.scrollTop=messages.scrollHeight}async function send(t){t=t.trim();if(!t)return;add(t,&#x27;user&#x27;);input.value=&#x27;&#x27;;const typing=document.createElement(&#x27;div&#x27;);typing.className=&#x27;msg bony typing&#x27;;typing.textContent=&#x27;بوني بيفكر...&#x27;;messages.appendChild(typing);messages.scrollTop=messages.scrollHeight;const answer=await askGemini(t)||replies[Math.floor(Math.random()*replies.length)];typing.remove();add(answer,&#x27;bony&#x27;)}document.getElementById(&#x27;form&#x27;).addEventListener(&#x27;submit&#x27;,e=&gt;{e.preventDefault();send(input.value)});document.querySelectorAll(&#x27;[data-text]&#x27;).forEach(b=&gt;b.addEventListener(&#x27;click&#x27;,()=&gt;{input.value=b.dataset.text;send(input.value)}));document.getElementById(&#x27;close&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;window.close());window.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;)window.close()});&lt;\/script&gt;&lt;/body&gt;&lt;/html&gt;`;
+const replies=[&#x27;أنا معاكي 🐻✨ احكيلي براحتك.&#x27;,&#x27;نلعب ونغيّر لبسي ونكمّل المهمات 🎮&#x27;,&#x27;يا سلام على الكلام الحلو ده! فرحتيني 🥰&#x27;,&#x27;خدي نفس كده… يومك هيبقى ألطف 🤍&#x27;,&#x27;افتحي اللعبة الرئيسية لو عايزة تغيّري الملابس والخلفيات 👕&#x27;];const API_PATH=&#x27;/api/chat&#x27;;async function askGemini(text){try{const r=await fetch(API_PATH,{method:&#x27;POST&#x27;,headers:{&#x27;Content-Type&#x27;:&#x27;application/json&#x27;},body:JSON.stringify({mode:&#x27;chat&#x27;,text})});if(!r.ok)throw new Error(&#x27;proxy &#x27;+r.status);const d=await r.json();return d?.text?.trim()||null}catch(e){const note=document.querySelector(&#x27;.hint&#x27;);if(note)note.textContent=&#x27;الخادم غير متاح على GitHub Pages؛ سيستخدم بوني ردودًا محلية.&#x27;;return null}}const messages=document.getElementById(&#x27;messages&#x27;),input=document.getElementById(&#x27;input&#x27;);function add(t,c){const x=document.createElement(&#x27;div&#x27;);x.className=&#x27;msg &#x27;+c;x.textContent=t;messages.appendChild(x);messages.scrollTop=messages.scrollHeight}async function send(t){t=t.trim();if(!t)return;add(t,&#x27;user&#x27;);input.value=&#x27;&#x27;;const typing=document.createElement(&#x27;div&#x27;);typing.className=&#x27;msg bony typing&#x27;;typing.textContent=&#x27;بوني بيفكر...&#x27;;messages.appendChild(typing);messages.scrollTop=messages.scrollHeight;const answer=await askGemini(t)||replies[Math.floor(Math.random()*replies.length)];typing.remove();add(answer,&#x27;bony&#x27;)}document.getElementById(&#x27;form&#x27;).addEventListener(&#x27;submit&#x27;,e=&gt;{e.preventDefault();send(input.value)});document.querySelectorAll(&#x27;[data-text]&#x27;).forEach(b=&gt;b.addEventListener(&#x27;click&#x27;,()=&gt;{input.value=b.dataset.text;send(input.value)}));document.getElementById(&#x27;close&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;window.close());window.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;)window.close()});&lt;\/script&gt;&lt;/body&gt;&lt;/html&gt;`;
   function openBonyChat(){
     const w=window.open(&#x27;&#x27;, &#x27;bonyChatWindow&#x27;, &#x27;popup=yes,width=440,height=760,resizable=yes,scrollbars=no&#x27;);
     if(!w){document.getElementById(&#x27;chatPanel&#x27;)?.classList.add(&#x27;open&#x27;);return}
@@ -3865,7 +3866,7 @@ document.querySelectorAll(&#x27;.leaf-choice&#x27;).forEach(btn=&gt;btn.addEvent
  btn.classList.add(&#x27;active&#x27;);selectedColor=btn.dataset.color;
  document.querySelector(&#x27;#selectedNote&#x27;).textContent=&#x27;اللون المحدد: &#x27;+btn.dataset.name+&#x27;. انقر على غصن لإضافة ورقة.&#x27;;
 }));
-function removeLeaf(leaf){scene.remove(leaf);leaf.traverse(o=&gt;{if(o.isMesh){o.geometry.dispose();if(Array.isArray(o.material))o.material.forEach(m=&gt;m.dispose());else if(o.material!==veinMaterial)o.material.dispose();}});}
+function removeLeaf(leaf){scene.remove(leaf);leaf.traverse(o=&gt;{if(o.isMesh){if(o.geometry!==leafGeo&amp;&amp;o.geometry!==leafStemGeo)o.geometry.dispose();if(Array.isArray(o.material))o.material.forEach(m=&gt;m.dispose());else if(o.material!==veinMaterial)o.material.dispose();}});}
 document.querySelector(&#x27;#undo&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const l=leaves.pop();if(l)removeLeaf(l);document.querySelector(&#x27;#count&#x27;).textContent=leaves.length;saveProgress();});
 restoreProgress();
 
@@ -4117,7 +4118,7 @@ new ResizeObserver(resize).observe(host);resize();
 
 /* ===== Timer + flow control ===== */
 // The neck acts as a valve: a PI controller on &quot;seconds behind schedule&quot; tunes drag so the sand empties exactly when the countdown ends.
-let mode=&#x27;idle&#x27;,paused=false,T=60,t=0,I=0,frac0=0,theta=0,target=0,quality=900,soundOn=true;
+let mode=&#x27;idle&#x27;,paused=false,T=60,t=0,I=0,frac0=0,theta=0,target=0,quality=2200,soundOn=true;
 const KP=.6,KI=.09;
 const clockEl=$(&#x27;#clock&#x27;),fillEl=$(&#x27;#fill&#x27;),statusEl=$(&#x27;#status&#x27;),panel=$(&#x27;#panel&#x27;),goBtn=$(&#x27;#go&#x27;);
 const fmt=s=&gt;{s=Math.max(0,Math.ceil(s));return String(Math.floor(s/60)).padStart(2,&#x27;0&#x27;)+&#x27;:&#x27;+String(s%60).padStart(2,&#x27;0&#x27;);};
@@ -4161,16 +4162,17 @@ $(&#x27;#quality&#x27;).onchange=e=&gt;{quality=+e.target.value;fullReset();};
 $(&#x27;#sound&#x27;).onchange=e=&gt;{soundOn=e.target.checked;};
 $(&#x27;#showStats&#x27;).onchange=e=&gt;{$(&#x27;#stats&#x27;).hidden=!e.target.checked;};
 
-let last=performance.now(),acc=0;
+let last=performance.now(),timerLast=last,acc=0;
 function animate(now){
  requestAnimationFrame(animate);
  const dt=Math.min((now-last)/1000,.05);last=now;
+ const timerDt=Math.max(0,(now-timerLast)/1000);timerLast=now;
  theta+=(target-theta)*(1-Math.exp(-6*dt));rig.rotation.z=theta;
  S.gx=-S.G*Math.sin(theta);S.gy=-S.G*Math.cos(theta); // gravity expressed in the glass frame
  if(!(mode===&#x27;run&#x27;&amp;&amp;paused)){
   acc=Math.min(acc+dt,.05);let n=0;
   while(acc&gt;=S.DT&amp;&amp;n&lt;28){S.step();acc-=S.DT;n++;}
-  if(mode===&#x27;run&#x27;)control(dt);
+  if(mode===&#x27;run&#x27;)control(timerDt);
  }
  if(mode===&#x27;run&#x27;||mode===&#x27;done&#x27;)ui();
  updateMeshes();orbit.update();renderer.render(scene,camera);
@@ -4346,32 +4348,10 @@ document.addEventListener("DOMContentLoaded",()=>{updateCounters(),initAnniversa
 (()=>{
   const ids=['hero','countdown','memory-wheel','music-section','zodiac-section','bony-section','tree-section','hourglass-section'];
   const views=ids.map(id=>document.getElementById(id)).filter(Boolean);
-  const links=[...document.querySelectorAll('#bottom-nav-dock .bottom-nav-item')];
-  let transitionTimer;
-  const show=(id)=>{
-    const previous=views.find(v=>v.classList.contains('view-current'));
-    views.forEach(v=>{v.classList.remove('view-current','page-view','view-transition-in');v.hidden=false;});
-    views.forEach(v=>{v.classList.add('page-view');});
-    const chosen=document.getElementById(id)||document.getElementById('hero');
-    views.forEach(v=>{if(v!==chosen){v.classList.remove('view-current');v.hidden=true;}});
-    chosen.hidden=false;chosen.classList.add('view-current');
-    document.body.classList.add('single-view-mode');
-    clearTimeout(transitionTimer);
-    requestAnimationFrame(()=>{
-      chosen.classList.add('view-transition-in');
-      transitionTimer=window.setTimeout(()=>chosen.classList.remove('view-transition-in'),680);
-    });
-    window.scrollTo({top:0,behavior:'smooth'});
-  };
-  show('hero');
-  window.hakayatnaShow=show;
-  links.forEach(link=>link.addEventListener('click',e=>{
-    const href=link.getAttribute('href')||'';
-    const id=href.startsWith('#')?href.slice(1):'';
-    if(!ids.includes(id))return;
-    e.preventDefault();
-    show(id);
-  }));
+  const links=[...document.querySelectorAll('#bottom-nav-dock .bottom-nav-item')]; let transitionTimer;
+  const valid=id=>ids.includes(id)?id:'hero'; const hashId=()=>valid((location.hash||'').slice(1));
+  const show=(id,{updateHash=true,behavior='smooth'}={})=>{id=valid(id);const chosen=document.getElementById(id)||document.getElementById('hero');views.forEach(v=>{v.classList.remove('view-current','page-view','view-transition-in');v.hidden=v!==chosen;v.classList.add('page-view')});chosen.hidden=false;chosen.classList.add('view-current');document.body.classList.add('single-view-mode');links.forEach(x=>x.classList.toggle('active',x.getAttribute('href')==='#'+id));clearTimeout(transitionTimer);requestAnimationFrame(()=>{chosen.classList.add('view-transition-in');transitionTimer=setTimeout(()=>chosen.classList.remove('view-transition-in'),680)});window.scrollTo({top:0,behavior});if(updateHash&&location.hash!=='#'+id)history.pushState({section:id},'', '#'+id)};
+  window.hakayatnaShow=show;show(hashId(),{updateHash:false,behavior:'auto'});links.forEach(link=>link.addEventListener('click',e=>{const id=(link.getAttribute('href')||'').slice(1);if(!ids.includes(id))return;e.preventDefault();show(id)}));const restore=()=>show(hashId(),{updateHash:false,behavior:'auto'});window.addEventListener('popstate',restore);window.addEventListener('hashchange',restore);
 })();
 </script>
 
@@ -4467,7 +4447,7 @@ paint();
   const setOpen=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'إغلاق القائمة الجانبية':'فتح القائمة الجانبية');menu.classList.toggle('is-open',open);backdrop.classList.toggle('is-open',open);menu.setAttribute('aria-hidden',String(!open));backdrop.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('menu-open',open);if(open)close.focus();else toggle.focus();};
   toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));
   close.addEventListener('click',()=>setOpen(false)); backdrop.addEventListener('click',()=>setOpen(false));
-  menu.querySelectorAll('.side-menu-link').forEach(link=>link.addEventListener('click',e=>{const href=link.getAttribute('href')||'';if(!href.startsWith('#')){setOpen(false);return;}e.preventDefault();const dockLink=document.querySelector('#bottom-nav-dock .bottom-nav-item[href="'+href+'"]');if(dockLink)dockLink.click();else if(window.hakayatnaShow&&['tree-section','hourglass-section'].includes(href.slice(1)))window.hakayatnaShow(href.slice(1));else{const target=document.querySelector(href);if(target){if(href==='#bony-section')target.hidden=false;document.body.classList.remove('single-view-mode');target.scrollIntoView({behavior:'smooth',block:'start'});}}setOpen(false);}));
+  menu.querySelectorAll('.side-menu-link').forEach(link=>link.addEventListener('click',e=>{const href=link.getAttribute('href')||'';if(!href.startsWith('#')){setOpen(false);return;}e.preventDefault();const dockLink=document.querySelector('#bottom-nav-dock .bottom-nav-item[href="'+href+'"]');if(window.hakayatnaShow&&['hero','countdown','memory-wheel','music-section','zodiac-section','bony-section','tree-section','hourglass-section'].includes(href.slice(1)))window.hakayatnaShow(href.slice(1));else if(dockLink)dockLink.click();else{const target=document.querySelector(href);if(target){if(href==='#bony-section')target.hidden=false;document.body.classList.remove('single-view-mode');target.scrollIntoView({behavior:'smooth',block:'start'});}}setOpen(false);}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true')setOpen(false);});
 })();
 </script>
